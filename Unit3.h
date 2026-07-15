@@ -7,12 +7,14 @@
 #include <Vcl.Forms.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Dialogs.hpp>
-#include <vector>
 
-struct GlifoInfo {
-    long failo_offsetas;
+struct sriftai {
     int plotis;
-    int aukstis;
+    int ilgis;
+    int lmargin;
+    int rmargin;
+    int nzn;
+    int nzn2;
 };
 
 class TForm3 : public TForm
@@ -27,11 +29,16 @@ __published:
 	void __fastcall Image2MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
 	void __fastcall Image2MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 private:
-	std::vector<char> g_srifto_buf;
-	long g_srifto_dydis;
-	std::vector<GlifoInfo> g_glifu_indeksas;
+    // Originalūs jūsų kintamieji iš Unit1
+    sriftai sr[300];
+    TColor senasp[300][100][100];
+    bool pakeisted_simbolis[300];
+    int sr_count;
+    int senas;
+    static const int point = 10; // Padidinom tinklelio mastelį iki 10 redagavimui
 public:
 	__fastcall TForm3(TComponent* Owner);
+    void rodyk(int sr_sk); // Jūsų originali rodymo funkcija
 };
 
 extern PACKAGE TForm3 *Form3;
