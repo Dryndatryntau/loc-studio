@@ -9,6 +9,7 @@
 #include <Vcl.Dialogs.hpp>
 #include <Vcl.ComCtrls.hpp>
 #include <Vcl.Grids.hpp>
+#include <vector> // Átraukiame vektoriø
 
 struct sriftai {
     int plotis;
@@ -17,6 +18,13 @@ struct sriftai {
     int rmargin;
     int nzn;
     int nzn2;
+};
+
+// Struktûra archyvo failø parametrams saugoti
+struct H4R_Failas {
+    AnsiString vardas;
+    long startas;
+    long dydis;
 };
 
 class TForm3 : public TForm
@@ -32,16 +40,15 @@ __published:	// IDE-managed Components
 	TTabSheet *TabText;   // Tekstø tab'as
 	TPanel *Panel1;       // Mygtukø skydelis
 	TStringGrid *StringGrid1; // Lentelë archyvo failams
-	TComboBox *ComboGame; // Pakeista: jûsø þaidimø pasirinkimas
+	TComboBox *ComboGame;
 	TComboBox *ComboLang;
-	TOpenDialog *OpenDialogForma;
-	TSaveDialog *SaveDialogas; // Pakeista: jûsø kalbø pasirinkimas
 
 	void __fastcall BtnOpenFontClick(TObject *Sender);
 	void __fastcall ListFontsClick(TObject *Sender);
 	void __fastcall Image2MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
 	void __fastcall Image2MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
-	void __fastcall BtnUnpackClickClick(TObject *Sender);
+	void __fastcall BtnOpenH4RClick(TObject *Sender); // Pridëtas atidarymas
+	void __fastcall BtnUnpackClick(TObject *Sender);  // Pridëtas iðpakavimas
 private:
 public:
 	__fastcall TForm3(TComponent* Owner);

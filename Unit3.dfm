@@ -100,7 +100,7 @@ object Form3: TForm3
         Height = 25
         Caption = 'I'#353'pakuoti h4r'
         TabOrder = 0
-        OnClick = BtnUnpackClickClick
+        OnClick = BtnUnpackClick
       end
     end
   end
