@@ -7,11 +7,13 @@
 #include <Vcl.Forms.hpp>
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Dialogs.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.Grids.hpp> // Bûtina biblioteka kortelëms valdyti
 
 struct sriftai {
     int plotis;
     int ilgis;
-    int lmargin;
+	int lmargin;
     int rmargin;
     int nzn;
     int nzn2;
@@ -19,28 +21,31 @@ struct sriftai {
 
 class TForm3 : public TForm
 {
-__published:
+__published:	// IDE-managed Components
 	TListBox *ListFonts;
 	TImage *Image1;
 	TImage *Image2;
 	TButton *BtnOpenFont;
+	TPageControl *PageControl1;
+	TTabSheet *TabArch;   // Archyvavimo tab'as
+	TTabSheet *TabFonts;  // Ðriftø tab'as
+	TTabSheet *TabText;   // Tekstø tab'as
+
+	TPanel *Panel1;
+	TStringGrid *StringGrid1;
+	TButton *Button1;
+
 	void __fastcall BtnOpenFontClick(TObject *Sender);
 	void __fastcall ListFontsClick(TObject *Sender);
 	void __fastcall Image2MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
 	void __fastcall Image2MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
 private:
-    // OriginalÅ«s jÅ«sÅ³ kintamieji iÅ¡ Unit1
-    sriftai sr[300];
-    TColor senasp[300][100][100];
-    bool pakeisted_simbolis[300];
-    int sr_count;
-    int senas;
-    static const int point = 10; // Padidinom tinklelio mastelÄ¯ iki 10 redagavimui
 public:
 	__fastcall TForm3(TComponent* Owner);
-    void rodyk(int sr_sk); // JÅ«sÅ³ originali rodymo funkcija
+    void rodyk(int sr_sk);
 };
 
 extern PACKAGE TForm3 *Form3;
 
 #endif
+

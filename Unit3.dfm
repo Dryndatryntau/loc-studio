@@ -16,11 +16,11 @@ object Form3: TForm3
     Top = 41
     Width = 931
     Height = 565
-    ActivePage = TabFonts
+    ActivePage = TabArch
     Align = alClient
     TabOrder = 0
-    ExplicitTop = 0
-    ExplicitHeight = 606
+    ExplicitWidth = 929
+    ExplicitHeight = 557
     object TabFonts: TTabSheet
       Caption = #352'riftai'
       object ListFonts: TListBox
@@ -32,6 +32,7 @@ object Form3: TForm3
         ItemHeight = 15
         TabOrder = 0
         OnClick = ListFontsClick
+        ExplicitHeight = 527
       end
       object PanelFontsRight: TPanel
         Left = 150
@@ -40,7 +41,8 @@ object Form3: TForm3
         Height = 535
         Align = alClient
         TabOrder = 1
-        ExplicitTop = -24
+        ExplicitWidth = 771
+        ExplicitHeight = 527
         object Image1: TImage
           Left = 616
           Top = 0
@@ -73,7 +75,6 @@ object Form3: TForm3
           Height = 25
           Caption = 'I'#353'saugoti '#353'rift'#261
           TabOrder = 1
-          OnClick = BtnSaveFontClick
         end
       end
     end
@@ -87,15 +88,19 @@ object Form3: TForm3
         Height = 535
         Align = alClient
         TabOrder = 0
-        ExplicitLeft = 224
-        ExplicitTop = 160
-        ExplicitWidth = 320
-        ExplicitHeight = 120
       end
     end
     object TabArch: TTabSheet
       Caption = 'Archyvai'
       ImageIndex = 2
+      object Button1: TButton
+        Left = 72
+        Top = 104
+        Width = 75
+        Height = 25
+        Caption = 'Button1'
+        TabOrder = 0
+      end
     end
   end
   object Panel1: TPanel
@@ -105,8 +110,7 @@ object Form3: TForm3
     Height = 41
     Align = alTop
     TabOrder = 1
-    ExplicitLeft = 384
-    ExplicitWidth = 185
+    ExplicitWidth = 929
     object ComboGame: TComboBox
       Left = 4
       Top = 12
