@@ -7,9 +7,9 @@
 #pragma resource "*.dfm"
 TForm3 *Form3;
 
-// Globalūs jūsų veikiančios programos kintamieji ir masyvai
+// IŠTAISYTA: Sukurti tikrieji jūsų originalūs globalūs masyvai su dydžiais
 sriftai sr[300];
-TColor senasp[300][100][100];
+TColor senasp[300][64][64];
 bool pakeisted_simbolis[300];
 int sr_count = 0;
 int senas = -1;
@@ -31,7 +31,6 @@ void __fastcall TForm3::BtnOpenFontClick(TObject *Sender)
 
 	if (OpenDialog1->Execute())
 	{
-        // Ištaisyta: Naudojama _wfopen funkcija sėkmingam Unicode failų nuskaitymui
         failas = _wfopen(OpenDialog1->FileName.w_str(), L"rb");
         if (!failas) {
             delete OpenDialog1;
@@ -141,4 +140,85 @@ void __fastcall TForm3::Image2MouseMove(TObject *Sender, TShiftState Shift, int 
         rodyk(senas);
 	}
 }
+
+void __fastcall TForm3::BtnUnpackClickClick(TObject *Sender)
+{
+if (g_archyvas.empty()) {
+		ShowMessage("Pirmiausia atidarykite .h4r failą!");
+		return;
+	}
+
+	TOpenDialog *OD = new TOpenDialog(Application);
+	OD->Title = "Pasirinkite archyvą išpakavimui";
+	OD->Filter = "Heroes 4 Archyvas (*.h4r)|*.h4r";
+
+	if (OD->Execute())
+	{
+		FILE *arch = _wfopen(OD->FileName.w_str(), L"rb");
+		if (!arch) { delete OD; return; }
+
+		// Nustatome kelius programos aplanke
+		AnsiString prog_kelias = ExtractFilePath(Application->ExeName);
+		AnsiString base_extracted = prog_kelias + "extracted\\";
+		AnsiString base_packed = prog_kelias + "packed\\";
+
+		// Sukuriame packed aplanką (jis visada reikalingas rezultatui)
+		ForceDirectories(base_packed);
+
+		// Sukame ciklą per visus archyvo failus
+		for (size_t i = 0; i < g_archyvas.size(); i++)
+		{
+			fseek(arch, g_archyvas[i].startas, SEEK_SET);
+
+			AnsiString sub_aplankas = "other\\";
+			AnsiString papildoma_galune = "";
+			AnsiString f_vardas = g_archyvas[i].vardas.LowerCase();
+
+			// Išmanus tipų filtravimas pagal sąrašą
+			if (f_vardas.Contains("font") || f_vardas.Contains(".fnt")) {
+				sub_aplankas = "fonts\\";
+			}
+			else if (f_vardas.Contains("map") || f_vardas.Contains(".h4m")) {
+				sub_aplankas = "game_maps\\";
+			}
+			else if (f_vardas.Contains("sound") || f_vardas.Contains("music") || f_vardas.Contains(".mp3") || f_vardas.Contains(".wav")) {
+				sub_aplankas = "sound\\";
+			}
+			else if (f_vardas.Contains("string") || f_vardas.Contains(".str")) {
+				sub_aplankas = "strings\\";
+				papildoma_galune = ".txt"; // Pakeičiam tekstams galūnę
+			}
+			else if (f_vardas.Contains("table") || f_vardas.Contains(".tbl")) {
+				sub_aplankas = "table\\";
+				papildoma_galune = ".txt"; // Pakeičiam lentelėms galūnę
+			}
+			else if (f_vardas.Contains("actor") || f_vardas.Contains("object") || f_vardas.Contains("anim") || f_vardas.Contains("bitmap")) {
+				sub_aplankas = "sprites\\";
+			}
+			else if (f_vardas.Contains("bink") || f_vardas.Contains(".bik")) {
+				sub_aplankas = "video\\";
+			}
+
+			// MAGIŠKA VIETA: Sukuriame konkretų aplanką tik tada, kai jo reikia!
+			AnsiString tikslus_aplankas = base_extracted + sub_aplankas;
+			ForceDirectories(tikslus_aplankas);
+
+			// Suformuojame galutinį kelią diske
+			AnsiString pilnas_kelias = tikslus_aplankas + g_archyvas[i].vardas + papildoma_galune;
+
+			FILE *f_isvestis = fopen(pilnas_kelias.c_str(), "wb");
+			if (f_isvestis)
+			{
+				std::vector<char> buferis(g_archyvas[i].dydis);
+				fread(buferis.data(), 1, g_archyvas[i].dydis, arch);
+				fwrite(buferis.data(), 1, g_archyvas[i].dydis, f_isvestis);
+				fclose(f_isvestis);
+			}
+		}
+		fclose(arch);
+		ShowMessage("Failai sėkmingai išpakuoti! Sukurti tik reikalingi aplankai:\n" + base_extracted);
+	}
+	delete OD;
+}
+//---------------------------------------------------------------------------
 

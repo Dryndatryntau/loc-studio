@@ -93,13 +93,14 @@ object Form3: TForm3
     object TabArch: TTabSheet
       Caption = 'Archyvai'
       ImageIndex = 2
-      object Button1: TButton
-        Left = 72
+      object BtnUnpackClick: TButton
+        Left = 70
         Top = 104
         Width = 75
         Height = 25
-        Caption = 'Button1'
+        Caption = 'I'#353'pakuoti h4r'
         TabOrder = 0
+        OnClick = BtnUnpackClickClick
       end
     end
   end
@@ -134,5 +135,13 @@ object Form3: TForm3
   end
   object SaveDialog1: TSaveDialog
     Left = 728
+  end
+  object OpenDialogForma: TOpenDialog
+    Left = 472
+    Top = 24
+  end
+  object SaveDialogas: TSaveDialog
+    Left = 544
+    Top = 24
   end
 end

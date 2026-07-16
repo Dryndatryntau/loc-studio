@@ -8,12 +8,12 @@
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Dialogs.hpp>
 #include <Vcl.ComCtrls.hpp>
-#include <Vcl.Grids.hpp> // Bûtina biblioteka kortelëms valdyti
+#include <Vcl.Grids.hpp>
 
 struct sriftai {
     int plotis;
     int ilgis;
-	int lmargin;
+    int lmargin;
     int rmargin;
     int nzn;
     int nzn2;
@@ -30,15 +30,18 @@ __published:	// IDE-managed Components
 	TTabSheet *TabArch;   // Archyvavimo tab'as
 	TTabSheet *TabFonts;  // Ðriftø tab'as
 	TTabSheet *TabText;   // Tekstø tab'as
-
-	TPanel *Panel1;
-	TStringGrid *StringGrid1;
-	TButton *Button1;
+	TPanel *Panel1;       // Mygtukø skydelis
+	TStringGrid *StringGrid1; // Lentelë archyvo failams
+	TComboBox *ComboGame; // Pakeista: jûsø þaidimø pasirinkimas
+	TComboBox *ComboLang;
+	TOpenDialog *OpenDialogForma;
+	TSaveDialog *SaveDialogas; // Pakeista: jûsø kalbø pasirinkimas
 
 	void __fastcall BtnOpenFontClick(TObject *Sender);
 	void __fastcall ListFontsClick(TObject *Sender);
 	void __fastcall Image2MouseDown(TObject *Sender, TMouseButton Button, TShiftState Shift, int X, int Y);
 	void __fastcall Image2MouseMove(TObject *Sender, TShiftState Shift, int X, int Y);
+	void __fastcall BtnUnpackClickClick(TObject *Sender);
 private:
 public:
 	__fastcall TForm3(TComponent* Owner);
