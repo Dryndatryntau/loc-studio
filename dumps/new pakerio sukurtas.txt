@@ -1,0 +1,1138 @@
+mh4 dump file of the h4r file D:/Games/Heroes/Heroes of Might and Magic IV/HoMM4_Tools/MH4a/pakas/new.h4r (103 files)
+
+
+[File 1]
+Name=font.Prose_Antique.10.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=8521
+Size=4610
+Unpacked=14627
+Date=0
+Pointer=136420456
+Compression=3
+
+[File 2]
+Name=font.Prose_Antique.12.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=13131
+Size=5806
+Unpacked=19315
+Date=0
+Pointer=136422304
+Compression=3
+
+[File 3]
+Name=font.Prose_Antique.14.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=18937
+Size=7034
+Unpacked=24033
+Date=0
+Pointer=136419400
+Compression=3
+
+[File 4]
+Name=font.Prose_Antique.16.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=25971
+Size=8826
+Unpacked=30263
+Date=0
+Pointer=136416760
+Compression=3
+
+[File 5]
+Name=font.Prose_Antique.18.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=34797
+Size=10261
+Unpacked=37519
+Date=0
+Pointer=136422568
+Compression=3
+
+[File 6]
+Name=font.Prose_Antique.20.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=45058
+Size=11600
+Unpacked=44367
+Date=0
+Pointer=136421776
+Compression=3
+
+[File 7]
+Name=font.Prose_Antique.22.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=56658
+Size=12782
+Unpacked=51831
+Date=0
+Pointer=136417816
+Compression=3
+
+[File 8]
+Name=font.Prose_Antique.24.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=69440
+Size=14990
+Unpacked=60799
+Date=0
+Pointer=136424680
+Compression=3
+
+[File 9]
+Name=font.Prose_Antique.26.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=84430
+Size=16585
+Unpacked=70453
+Date=0
+Pointer=136417024
+Compression=3
+
+[File 10]
+Name=font.Prose_Antique.28.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=101015
+Size=17870
+Unpacked=80355
+Date=0
+Pointer=136418080
+Compression=3
+
+[File 11]
+Name=font.Prose_Antique.30.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=118885
+Size=19635
+Unpacked=91327
+Date=0
+Pointer=136433128
+Compression=3
+
+[File 12]
+Name=font.Prose_Antique.32.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=138520
+Size=21276
+Unpacked=103159
+Date=0
+Pointer=136425208
+Compression=3
+
+[File 13]
+Name=font.Prose_Antique.34.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=159796
+Size=22848
+Unpacked=115263
+Date=0
+Pointer=136429696
+Compression=3
+
+[File 14]
+Name=font.Prose_Antique.36.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=182644
+Size=24433
+Unpacked=130687
+Date=0
+Pointer=136427848
+Compression=3
+
+[File 15]
+Name=font.Script.14.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=207077
+Size=6206
+Unpacked=23431
+Date=0
+Pointer=136431016
+Compression=3
+
+[File 16]
+Name=font.Script.16.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=213283
+Size=7627
+Unpacked=28951
+Date=0
+Pointer=136424944
+Compression=3
+
+[File 17]
+Name=font.Script.18.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=220910
+Size=9755
+Unpacked=36511
+Date=0
+Pointer=136430488
+Compression=3
+
+[File 18]
+Name=font.Script.20.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=230665
+Size=10152
+Unpacked=41407
+Date=0
+Pointer=136429168
+Compression=3
+
+[File 19]
+Name=font.Small Fonts5.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=240817
+Size=2344
+Unpacked=13203
+Date=0
+Pointer=136426264
+Compression=3
+
+[File 20]
+Name=font.Small Fonts6.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=243161
+Size=3065
+Unpacked=17506
+Date=0
+Pointer=136426528
+Compression=3
+
+[File 21]
+Name=font.Small Fonts7.h4d
+Path=E:\H4 LT\extracted\font\
+Type=font
+Offset=246226
+Size=2014
+Unpacked=19119
+Date=0
+Pointer=136440784
+Compression=3
+
+[File 22]
+Name=game_maps.campaign.Chaos_Campaign.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=248240
+Size=541338
+Unpacked=542198
+Date=0
+Pointer=136440520
+Compression=1
+
+[File 23]
+Name=game_maps.campaign.Death_Campaign.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=789578
+Size=268825
+Unpacked=268951
+Date=0
+Pointer=136437352
+Compression=1
+
+[File 24]
+Name=game_maps.campaign.Life_Campaign.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=1058403
+Size=288646
+Unpacked=289016
+Date=0
+Pointer=136435768
+Compression=1
+
+[File 25]
+Name=game_maps.campaign.Might_Campaign.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=1347049
+Size=212468
+Unpacked=213658
+Date=0
+Pointer=136438936
+Compression=1
+
+[File 26]
+Name=game_maps.campaign.Nature_Campaign.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=1559517
+Size=429382
+Unpacked=429849
+Date=0
+Pointer=136438672
+Compression=1
+
+[File 27]
+Name=game_maps.campaign.Order_Campaign.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=1988899
+Size=636759
+Unpacked=637271
+Date=0
+Pointer=136441312
+Compression=1
+
+[File 28]
+Name=game_maps.single.Tutorial.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=2625658
+Size=25185
+Unpacked=25131
+Date=0
+Pointer=136438408
+Compression=1
+
+[File 29]
+Name=game_maps.storm_campaign.Archmage.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=2650843
+Size=189393
+Unpacked=190057
+Date=0
+Pointer=136439992
+Compression=1
+
+[File 30]
+Name=game_maps.storm_campaign.Bard.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=2840236
+Size=159669
+Unpacked=159580
+Date=0
+Pointer=136433392
+Compression=1
+
+[File 31]
+Name=game_maps.storm_campaign.ChaosOrder.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=2999905
+Size=190112
+Unpacked=190054
+Date=0
+Pointer=136435240
+Compression=1
+
+[File 32]
+Name=game_maps.storm_campaign.Death-Life.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=3190017
+Size=177871
+Unpacked=178205
+Date=0
+Pointer=136446328
+Compression=1
+
+[File 33]
+Name=game_maps.storm_campaign.Dogwoggle Campaign.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=3367888
+Size=169495
+Unpacked=169922
+Date=0
+Pointer=136448440
+Compression=1
+
+[File 34]
+Name=game_maps.storm_campaign.GatheringStorm.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=3537383
+Size=166223
+Unpacked=166752
+Date=0
+Pointer=136446856
+Compression=1
+
+[File 35]
+Name=game_maps.wow_campaign.Erutan_Nature.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=3703606
+Size=111941
+Unpacked=112496
+Date=0
+Pointer=136445800
+Compression=1
+
+[File 36]
+Name=game_maps.wow_campaign.Mysterio_Order.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=3815547
+Size=165446
+Unpacked=165365
+Date=0
+Pointer=136442632
+Compression=1
+
+[File 37]
+Name=game_maps.wow_campaign.Mongo_Might.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=3980993
+Size=145556
+Unpacked=145659
+Date=0
+Pointer=136449760
+Compression=1
+
+[File 38]
+Name=game_maps.wow_campaign.Spazz_Chaos.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=4126549
+Size=102749
+Unpacked=102895
+Date=0
+Pointer=136447120
+Compression=1
+
+[File 39]
+Name=game_maps.wow_campaign.Tarkin_Death.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=4229298
+Size=162128
+Unpacked=163047
+Date=0
+Pointer=136445272
+Compression=1
+
+[File 40]
+Name=game_maps.wow_campaign.winds_of_war.h4d
+Path=E:\H4 LT\extracted\game_maps\
+Type=game_maps
+Offset=4391426
+Size=93617
+Unpacked=93674
+Date=0
+Pointer=136443952
+Compression=1
+
+[File 41]
+Name=sound.Voice_Over.Chaos A.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=4485043
+Size=550583
+Unpacked=562853
+Date=0
+Pointer=136443424
+Compression=3
+
+[File 42]
+Name=sound.Voice_Over.Chaos B.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=5035626
+Size=753897
+Unpacked=766190
+Date=0
+Pointer=136446064
+Compression=3
+
+[File 43]
+Name=sound.Voice_Over.Chaos C.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=5789523
+Size=618917
+Unpacked=629413
+Date=0
+Pointer=136458472
+Compression=3
+
+[File 44]
+Name=sound.Voice_Over.Chaos D.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=6408440
+Size=685996
+Unpacked=696704
+Date=0
+Pointer=136454776
+Compression=3
+
+[File 45]
+Name=sound.Voice_Over.Chaos E - Epilogue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=7094436
+Size=658374
+Unpacked=669642
+Date=0
+Pointer=136455568
+Compression=3
+
+[File 46]
+Name=sound.Voice_Over.Chaos E - Intro.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=7752810
+Size=753491
+Unpacked=765824
+Date=0
+Pointer=136455832
+Compression=3
+
+[File 47]
+Name=sound.Voice_Over.Death A.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=8506301
+Size=563312
+Unpacked=584430
+Date=0
+Pointer=136456096
+Compression=3
+
+[File 48]
+Name=sound.Voice_Over.Death B.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=9069613
+Size=572378
+Unpacked=593573
+Date=0
+Pointer=136457416
+Compression=3
+
+[File 49]
+Name=sound.Voice_Over.Death C.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=9641991
+Size=421729
+Unpacked=438144
+Date=0
+Pointer=136452664
+Compression=3
+
+[File 50]
+Name=sound.Voice_Over.Death D.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=10063720
+Size=700473
+Unpacked=723402
+Date=0
+Pointer=136454248
+Compression=3
+
+[File 51]
+Name=sound.Voice_Over.Death E - Epilogue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=10764193
+Size=695837
+Unpacked=719744
+Date=0
+Pointer=136452136
+Compression=3
+
+[File 52]
+Name=sound.Voice_Over.Death E - Intro.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=11460030
+Size=884950
+Unpacked=916864
+Date=0
+Pointer=136452400
+Compression=3
+
+[File 53]
+Name=sound.Voice_Over.H4x1_campaign_1_epilogue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=12344980
+Size=333040
+Unpacked=379943
+Date=0
+Pointer=136464544
+Compression=3
+
+[File 54]
+Name=sound.Voice_Over.H4x1_campaign_1_prologue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=12678020
+Size=561318
+Unpacked=635734
+Date=0
+Pointer=136459792
+Compression=3
+
+[File 55]
+Name=sound.Voice_Over.H4x1_campaign_2_epilogue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=13239338
+Size=472277
+Unpacked=536678
+Date=0
+Pointer=136461112
+Compression=3
+
+[File 56]
+Name=sound.Voice_Over.H4x1_campaign_2_prologue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=13711615
+Size=495489
+Unpacked=562383
+Date=0
+Pointer=136459264
+Compression=3
+
+[File 57]
+Name=sound.Voice_Over.H4x1_campaign_3_epilogue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=14207104
+Size=258167
+Unpacked=294680
+Date=0
+Pointer=136465072
+Compression=3
+
+[File 58]
+Name=sound.Voice_Over.H4x1_campaign_3_prologue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=14465271
+Size=428288
+Unpacked=487777
+Date=0
+Pointer=136466128
+Compression=3
+
+[File 59]
+Name=sound.Voice_Over.H4x1_campaign_4_epilogue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=14893559
+Size=450672
+Unpacked=522885
+Date=0
+Pointer=136463488
+Compression=3
+
+[File 60]
+Name=sound.Voice_Over.H4x1_campaign_4_prologue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=15344231
+Size=598536
+Unpacked=685890
+Date=0
+Pointer=136466920
+Compression=3
+
+[File 61]
+Name=sound.Voice_Over.H4x1_campaign_5_epilogue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=15942767
+Size=245500
+Unpacked=277752
+Date=0
+Pointer=136460320
+Compression=3
+
+[File 62]
+Name=sound.Voice_Over.H4x1_campaign_5_prologue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=16188267
+Size=373422
+Unpacked=426337
+Date=0
+Pointer=136462432
+Compression=3
+
+[File 63]
+Name=sound.Voice_Over.H4x1_campaign_6_epilogue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=16561689
+Size=738289
+Unpacked=849521
+Date=0
+Pointer=136463752
+Compression=3
+
+[File 64]
+Name=sound.Voice_Over.H4x1_campaign_6_prologue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=17299978
+Size=441686
+Unpacked=505958
+Date=0
+Pointer=136468768
+Compression=3
+
+[File 65]
+Name=sound.Voice_Over.Life A.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=17741664
+Size=482484
+Unpacked=501047
+Date=0
+Pointer=136474840
+Compression=3
+
+[File 66]
+Name=sound.Voice_Over.Life B.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=18224148
+Size=447632
+Unpacked=464842
+Date=0
+Pointer=136469824
+Compression=3
+
+[File 67]
+Name=sound.Voice_Over.Life C.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=18671780
+Size=493955
+Unpacked=513847
+Date=0
+Pointer=136469296
+Compression=3
+
+[File 68]
+Name=sound.Voice_Over.Life D.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=19165735
+Size=557234
+Unpacked=579676
+Date=0
+Pointer=136467184
+Compression=3
+
+[File 69]
+Name=sound.Voice_Over.Life E - Epilogue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=19722969
+Size=394475
+Unpacked=410350
+Date=0
+Pointer=136474048
+Compression=3
+
+[File 70]
+Name=sound.Voice_Over.Life E - Intro.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=20117444
+Size=484084
+Unpacked=503242
+Date=0
+Pointer=136472728
+Compression=3
+
+[File 71]
+Name=sound.Voice_Over.Might A.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=20601528
+Size=715244
+Unpacked=740224
+Date=0
+Pointer=136471672
+Compression=3
+
+[File 72]
+Name=sound.Voice_Over.Might B.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=21316772
+Size=602906
+Unpacked=625390
+Date=0
+Pointer=136473520
+Compression=3
+
+[File 73]
+Name=sound.Voice_Over.Might C.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=21919678
+Size=777306
+Unpacked=806053
+Date=0
+Pointer=136475104
+Compression=3
+
+[File 74]
+Name=sound.Voice_Over.Might D - Epilogue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=22696984
+Size=574441
+Unpacked=597230
+Date=0
+Pointer=136468504
+Compression=3
+
+[File 75]
+Name=sound.Voice_Over.Might D - Intro.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=23271425
+Size=781067
+Unpacked=809344
+Date=0
+Pointer=136481968
+Compression=3
+
+[File 76]
+Name=sound.Voice_Over.Nature A.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=24052492
+Size=776525
+Unpacked=805322
+Date=0
+Pointer=136482232
+Compression=3
+
+[File 77]
+Name=sound.Voice_Over.Nature B.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=24829017
+Size=777474
+Unpacked=806784
+Date=0
+Pointer=136481704
+Compression=3
+
+[File 78]
+Name=sound.Voice_Over.Nature C.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=25606491
+Size=622785
+Unpacked=645504
+Date=0
+Pointer=136479064
+Compression=3
+
+[File 79]
+Name=sound.Voice_Over.Nature D.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=26229276
+Size=564423
+Unpacked=585162
+Date=0
+Pointer=136482760
+Compression=3
+
+[File 80]
+Name=sound.Voice_Over.Nature E - Epilogue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=26793699
+Size=650118
+Unpacked=675127
+Date=0
+Pointer=136479328
+Compression=3
+
+[File 81]
+Name=sound.Voice_Over.Nature E - Intro.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=27443817
+Size=554034
+Unpacked=574922
+Date=0
+Pointer=136475896
+Compression=3
+
+[File 82]
+Name=sound.Voice_Over.Order A.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=27997851
+Size=650301
+Unpacked=676956
+Date=0
+Pointer=136479856
+Compression=3
+
+[File 83]
+Name=sound.Voice_Over.Order B.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=28648152
+Size=527286
+Unpacked=548590
+Date=0
+Pointer=136477744
+Compression=3
+
+[File 84]
+Name=sound.Voice_Over.Order C.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=29175438
+Size=599180
+Unpacked=621367
+Date=0
+Pointer=136480384
+Compression=3
+
+[File 85]
+Name=sound.Voice_Over.Order D.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=29774618
+Size=756533
+Unpacked=785939
+Date=0
+Pointer=136489624
+Compression=3
+
+[File 86]
+Name=sound.Voice_Over.Order E.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=30531151
+Size=568310
+Unpacked=590282
+Date=0
+Pointer=136492264
+Compression=3
+
+[File 87]
+Name=sound.Voice_Over.Order F.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=31099461
+Size=680640
+Unpacked=705482
+Date=0
+Pointer=136484344
+Compression=3
+
+[File 88]
+Name=sound.Voice_Over.Order G.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=31780101
+Size=593363
+Unpacked=616613
+Date=0
+Pointer=136486720
+Compression=3
+
+[File 89]
+Name=sound.Voice_Over.Order H - Epilogue.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=32373464
+Size=437992
+Unpacked=454602
+Date=0
+Pointer=136486456
+Compression=3
+
+[File 90]
+Name=sound.Voice_Over.Order H - Intro.h4d
+Path=E:\H4 LT\extracted\sound\
+Type=sound
+Offset=32811456
+Size=526846
+Unpacked=546762
+Date=0
+Pointer=136490152
+Compression=3
+
+[File 91]
+Name=strings.Credits.h4d
+Path=E:\H4 LT\extracted\strings\
+Type=strings
+Offset=33338302
+Size=1871
+Unpacked=3412
+Date=0
+Pointer=136485400
+Compression=3
+
+[File 92]
+Name=strings.intro voice over text.h4d
+Path=E:\H4 LT\extracted\strings\
+Type=strings
+Offset=33340173
+Size=1430
+Unpacked=2365
+Date=0
+Pointer=136488304
+Compression=3
+
+[File 93]
+Name=strings.Text.h4d
+Path=E:\H4 LT\extracted\strings\
+Type=strings
+Offset=33341603
+Size=33575
+Unpacked=98981
+Date=0
+Pointer=136487776
+Compression=3
+
+[File 94]
+Name=table.Adventure Object.h4d
+Path=E:\H4 LT\extracted\table\
+Type=table
+Offset=33375178
+Size=40854
+Unpacked=143785
+Date=0
+Pointer=136488040
+Compression=3
+
+[File 95]
+Name=table.artifacts.h4d
+Path=E:\H4 LT\extracted\table\
+Type=table
+Offset=33416032
+Size=50950
+Unpacked=141235
+Date=0
+Pointer=136489360
+Compression=3
+
+[File 96]
+Name=table.buildings.h4d
+Path=E:\H4 LT\extracted\table\
+Type=table
+Offset=33466982
+Size=4819
+Unpacked=21540
+Date=0
+Pointer=136497280
+Compression=3
+
+[File 97]
+Name=table.creature_abilities.h4d
+Path=E:\H4 LT\extracted\table\
+Type=table
+Offset=33471801
+Size=4420
+Unpacked=10450
+Date=0
+Pointer=136494904
+Compression=3
+
+[File 98]
+Name=table.creatures.h4d
+Path=E:\H4 LT\extracted\table\
+Type=table
+Offset=33476221
+Size=8638
+Unpacked=22094
+Date=0
+Pointer=136495696
+Compression=3
+
+[File 99]
+Name=table.heroes.h4d
+Path=E:\H4 LT\extracted\table\
+Type=table
+Offset=33484859
+Size=48646
+Unpacked=143752
+Date=0
+Pointer=136499656
+Compression=3
+
+[File 100]
+Name=table.Interface.h4d
+Path=E:\H4 LT\extracted\table\
+Type=table
+Offset=33533505
+Size=20725
+Unpacked=70040
+Date=0
+Pointer=136494640
+Compression=3
+
+[File 101]
+Name=table.random_names.h4d
+Path=E:\H4 LT\extracted\table\
+Type=table
+Offset=33554230
+Size=2298
+Unpacked=6463
+Date=0
+Pointer=136493584
+Compression=3
+
+[File 102]
+Name=table.skills.h4d
+Path=E:\H4 LT\extracted\table\
+Type=table
+Offset=33556528
+Size=5277
+Unpacked=34615
+Date=0
+Pointer=136495432
+Compression=3
+
+[File 103]
+Name=table.Spells.h4d
+Path=E:\H4 LT\extracted\table\
+Type=table
+Offset=33561805
+Size=23887
+Unpacked=81400
+Date=0
+Pointer=136499128
+Compression=3
+
+
+[End]

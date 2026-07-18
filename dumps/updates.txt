@@ -1,0 +1,1413 @@
+mh4 dump file of the h4r file D:/Games/Heroes/Heroes of Might and Magic IV/HoMM4_Tools/MH4a/pakas/updates.h4r (128 files)
+
+
+[File 1]
+Name=table.combat_obstacles.h4d
+Path=C:\Heroes4\assets\XLS\
+Type=table
+Offset=13186
+Size=1318
+Unpacked=22012
+Date=1015467024
+Pointer=161345176
+Compression=3
+
+[File 2]
+Name=layers.dialog.buy_building.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\
+Type=layers
+Offset=14504
+Size=430165
+Unpacked=580959
+Date=1016588202
+Pointer=161347024
+Compression=3
+
+[File 3]
+Name=layers.dialog.mage_guild.book.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\mage_guild\
+Type=layers
+Offset=444669
+Size=467646
+Unpacked=698615
+Date=1016212706
+Pointer=161343592
+Compression=3
+
+[File 4]
+Name=layers.dialog.options.h4d
+Path=M:\Assets\layers\dialog\
+Type=layers
+Offset=912315
+Size=266555
+Unpacked=417256
+Date=1019166954
+Pointer=161347552
+Compression=3
+
+[File 5]
+Name=layers.Dialog.Altars.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=1178870
+Size=200700
+Unpacked=291065
+Date=1016495486
+Pointer=161344648
+Compression=3
+
+[File 6]
+Name=layers.dialog.beastmaster.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=1379570
+Size=196363
+Unpacked=472837
+Date=1016474364
+Pointer=161344120
+Compression=3
+
+[File 7]
+Name=layers.dialog.hire_hero.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=1575933
+Size=274937
+Unpacked=622779
+Date=1016476158
+Pointer=161345704
+Compression=3
+
+[File 8]
+Name=layers.dialog.New_Game_Options.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=1850870
+Size=350556
+Unpacked=604104
+Date=1016738394
+Pointer=161344384
+Compression=3
+
+[File 9]
+Name=layers.dialog.combat.options.h4d
+Path=M:\Assets\layers\dialog\combat\
+Type=layers
+Offset=2201426
+Size=240878
+Unpacked=358720
+Date=1019172018
+Pointer=161340424
+Compression=3
+
+[File 10]
+Name=layers.icons.View_World.h4d
+Path=D:\Heroes 4\Assets\layers\icons\
+Type=layers
+Offset=2442304
+Size=25977
+Unpacked=33090
+Date=1016477054
+Pointer=161351512
+Compression=3
+
+[File 11]
+Name=layers.icons.creature_rings.h4d
+Path=D:\Heroes 4\Assets\layers\
+Type=layers
+Offset=2468281
+Size=100468
+Unpacked=275778
+Date=1016474778
+Pointer=161350192
+Compression=3
+
+[File 12]
+Name=layers.creature_rings.h4d
+Path=D:\Heroes 4\Assets\layers\
+Type=layers
+Offset=2568749
+Size=100466
+Unpacked=275822
+Date=1016479942
+Pointer=161348872
+Compression=3
+
+[File 13]
+Name=layers.dialog.sanctuary.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=2669215
+Size=158560
+Unpacked=244357
+Date=1016483168
+Pointer=161354152
+Compression=3
+
+[File 14]
+Name=layers.dialog.treasure_chest.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=2827775
+Size=155062
+Unpacked=296208
+Date=1016495202
+Pointer=161354416
+Compression=3
+
+[File 15]
+Name=layers.dialog.spell_book.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\
+Type=layers
+Offset=2982837
+Size=661468
+Unpacked=1049815
+Date=1016665050
+Pointer=161354680
+Compression=3
+
+[File 16]
+Name=layers.dialog.win.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=3644305
+Size=321912
+Unpacked=641832
+Date=1016666862
+Pointer=161351248
+Compression=3
+
+[File 17]
+Name=layers.dialog.choose_skill.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=3966217
+Size=358749
+Unpacked=631002
+Date=1016737734
+Pointer=161355208
+Compression=3
+
+[File 18]
+Name=layers.dialog.necromancy.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=4324966
+Size=81720
+Unpacked=186254
+Date=1016739746
+Pointer=161355736
+Compression=3
+
+[File 19]
+Name=layers.dialog.school_of_magic.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=4406686
+Size=223760
+Unpacked=326934
+Date=1016739770
+Pointer=161351776
+Compression=3
+
+[File 20]
+Name=layers.adventure.0800.h4d
+Path=D:\Heroes 4\Assets\layers\adventure\
+Type=layers
+Offset=4630446
+Size=193062
+Unpacked=368868
+Date=1016751974
+Pointer=161357056
+Compression=3
+
+[File 21]
+Name=layers.adventure.1024.h4d
+Path=D:\Heroes 4\Assets\layers\adventure\
+Type=layers
+Offset=4823508
+Size=259639
+Unpacked=466084
+Date=1016752056
+Pointer=161358112
+Compression=3
+
+[File 22]
+Name=layers.adventure.1280.h4d
+Path=D:\Heroes 4\Assets\layers\adventure\
+Type=layers
+Offset=5083147
+Size=334249
+Unpacked=650095
+Date=1016752026
+Pointer=161358640
+Compression=3
+
+[File 23]
+Name=layers.adventure.day_scroll.h4d
+Path=D:\Heroes 4\Assets\layers\adventure\
+Type=layers
+Offset=5417396
+Size=7680
+Unpacked=16418
+Date=1016752796
+Pointer=161359960
+Compression=3
+
+[File 24]
+Name=layers.dialog.Title.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\
+Type=layers
+Offset=5425076
+Size=13638
+Unpacked=29801
+Date=1016752756
+Pointer=161359168
+Compression=3
+
+[File 25]
+Name=layers.dialog.army.layout.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=5438714
+Size=787477
+Unpacked=1284035
+Date=1017337702
+Pointer=161360752
+Compression=3
+
+[File 26]
+Name=layers.dialog.army_right_click.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=6226191
+Size=158593
+Unpacked=350893
+Date=1016062250
+Pointer=161235880
+Compression=3
+
+[File 27]
+Name=layers.town.death.Caravan.h4d
+Path=D:\Heroes 4\Assets\layers\town\death\
+Type=layers
+Offset=6384784
+Size=149688
+Unpacked=178444
+Date=1017339114
+Pointer=161236144
+Compression=3
+
+[File 28]
+Name=layers.town.death.thumbnails.h4d
+Path=D:\Heroes 4\Assets\layers\town\death\
+Type=layers
+Offset=6534472
+Size=285220
+Unpacked=514479
+Date=1017339110
+Pointer=161232184
+Compression=3
+
+[File 29]
+Name=game_maps.Campaign.Chaos_Campaign.h4d
+Path=D:\HeroesWork\maps\Campaigns\
+Type=game_maps
+Offset=6819692
+Size=536622
+Unpacked=536622
+Date=1019063233
+Pointer=161232448
+Compression=1
+
+[File 30]
+Name=game_maps.Campaign.Death_Campaign.h4d
+Path=C:\Heroes4\maps\Campaigns\
+Type=game_maps
+Offset=7356314
+Size=265050
+Unpacked=265050
+Date=1030728386
+Pointer=161231920
+Compression=1
+
+[File 31]
+Name=game_maps.Campaign.Life_Campaign.h4d
+Path=D:\Heroes 4\Maps\Campaigns
+Type=game_maps
+Offset=7621364
+Size=284157
+Unpacked=284157
+Date=1017341547
+Pointer=161236936
+Compression=1
+
+[File 32]
+Name=game_maps.Campaign.Might_Campaign.h4d
+Path=D:\Heroes 4\Maps\Campaigns
+Type=game_maps
+Offset=7905521
+Size=210786
+Unpacked=210786
+Date=1017341547
+Pointer=161232712
+Compression=1
+
+[File 33]
+Name=game_maps.Campaign.Nature_Campaign.h4d
+Path=D:\Heroes 4\Maps\Campaigns
+Type=game_maps
+Offset=8116307
+Size=424467
+Unpacked=424467
+Date=1017341547
+Pointer=161234296
+Compression=1
+
+[File 34]
+Name=game_maps.Campaign.Order_Campaign.h4d
+Path=D:\Heroes 4\Maps\Campaigns\
+Type=game_maps
+Offset=8540774
+Size=628090
+Unpacked=628090
+Date=1017791796
+Pointer=161234560
+Compression=1
+
+[File 35]
+Name=layers.dialog.Teleporter.h4d
+Path=D:\Heroes 4\Assets\layers\dialog\
+Type=layers
+Offset=9168864
+Size=287602
+Unpacked=414946
+Date=1017686288
+Pointer=161235088
+Compression=3
+
+[File 36]
+Name=table.combat_grid_colors.h4d
+Path=C:\Heroes4\working\game\data\XLS\
+Type=table
+Offset=9456466
+Size=239
+Unpacked=600
+Date=1019176138
+Pointer=161245912
+Compression=3
+
+[File 37]
+Name=layers.dialog.multiplayer.setup.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\
+Type=layers
+Offset=9456705
+Size=347044
+Unpacked=621408
+Date=1028742786
+Pointer=161244064
+Compression=3
+
+[File 38]
+Name=layers.button.kick.h4d
+Path=M:\Assets\layers\button\
+Type=layers
+Offset=9803749
+Size=4418
+Unpacked=11218
+Date=1020203206
+Pointer=161243800
+Compression=3
+
+[File 39]
+Name=layers.button.multiplayer.setup.map.h4d
+Path=C:\Heroes4\Heroes4_Beta\Assets\layers\dialog\
+Type=layers
+Offset=9808167
+Size=4051
+Unpacked=7500
+Date=1021935532
+Pointer=161240632
+Compression=3
+
+[File 40]
+Name=layers.dialog.multiplayer.host.h4d
+Path=C:\Heroes4\Heroes4_Beta\Data\
+Type=layers
+Offset=9812218
+Size=157847
+Unpacked=274485
+Date=1023727124
+Pointer=161238784
+Compression=3
+
+[File 41]
+Name=layers.dialog.multiplayer.join.h4d
+Path=C:\
+Type=layers
+Offset=9970065
+Size=269099
+Unpacked=590833
+Date=1025203992
+Pointer=161242744
+Compression=3
+
+[File 42]
+Name=layers.dialog.multiplayer.directconnect.h4d
+Path=C:\Heroes4\Heroes4_Beta\Assets\layers\dialog\
+Type=layers
+Offset=10239164
+Size=95929
+Unpacked=157453
+Date=1021490456
+Pointer=161245120
+Compression=3
+
+[File 43]
+Name=layers.button.multiplayer.join.difficulty.h4d
+Path=C:\Heroes4\Heroes4_Beta\Assets\layers\dialog\
+Type=layers
+Offset=10335093
+Size=9608
+Unpacked=13237
+Date=1020904724
+Pointer=161239048
+Compression=3
+
+[File 44]
+Name=layers.button.multiplayer.join.players.h4d
+Path=C:\Heroes4\Heroes4_Beta\Assets\layers\dialog\
+Type=layers
+Offset=10344701
+Size=8463
+Unpacked=10219
+Date=1020904682
+Pointer=161240896
+Compression=3
+
+[File 45]
+Name=layers.button.multiplayer.setup.rightarrow.h4d
+Path=C:\Heroes4\Heroes4_Beta\Data\
+Type=layers
+Offset=10353164
+Size=7029
+Unpacked=11227
+Date=1021934720
+Pointer=161240368
+Compression=3
+
+[File 46]
+Name=layers.button.multiplayer.setup.leftarrow.h4d
+Path=C:\Heroes4\Heroes4_Beta\Data\
+Type=layers
+Offset=10360193
+Size=7111
+Unpacked=11282
+Date=1021934714
+Pointer=161244328
+Compression=3
+
+[File 47]
+Name=layers.button.multiplayer.setup.roaming.h4d
+Path=C:\Heroes4\Heroes4_Beta\Data\
+Type=layers
+Offset=10367304
+Size=19955
+Unpacked=39761
+Date=1021934724
+Pointer=161251720
+Compression=3
+
+[File 48]
+Name=layers.button.checkbox.h4d
+Path=C:\Heroes4\Heroes4_Beta\Data\
+Type=layers
+Offset=10387259
+Size=7654
+Unpacked=12080
+Date=1021934730
+Pointer=161248816
+Compression=3
+
+[File 49]
+Name=layers.button.multiplayer.setup.kick.h4d
+Path=C:\Heroes4\Heroes4_Beta\Data\
+Type=layers
+Offset=10394913
+Size=4542
+Unpacked=8359
+Date=1021934710
+Pointer=161250136
+Compression=3
+
+[File 50]
+Name=layers.dialog.multiplayer.directconnect_noport.h4d
+Path=\\Fs-curly\dev_heroes4\Jack_Incoming\
+Type=layers
+Offset=10399455
+Size=76691
+Unpacked=117381
+Date=1023303446
+Pointer=161248552
+Compression=3
+
+[File 51]
+Name=layers.dialog.multiplayer.chat.h4d
+Path=C:\
+Type=layers
+Offset=10476146
+Size=46089
+Unpacked=144045
+Date=1027386238
+Pointer=161255152
+Compression=3
+
+[File 52]
+Name=layers.dialog.password.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\
+Type=layers
+Offset=10522235
+Size=133708
+Unpacked=307913
+Date=1030056784
+Pointer=161247232
+Compression=3
+
+[File 53]
+Name=sound.Dialogue.New_Turn.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Dialogue\
+Type=sound
+Offset=10655943
+Size=168523
+Unpacked=224205
+Date=1029356789
+Pointer=161250400
+Compression=3
+
+[File 54]
+Name=layers.dialog.Blacksmith.Generic.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\blacksmith\
+Type=layers
+Offset=10824466
+Size=186886
+Unpacked=452603
+Date=1029177540
+Pointer=161252248
+Compression=3
+
+[File 55]
+Name=table.spell_artifact_costs.h4d
+Path=C:\Heroes4\working\game\data\XLS\
+Type=table
+Offset=11011352
+Size=139
+Unpacked=240
+Date=1029372512
+Pointer=161251456
+Compression=3
+
+[File 56]
+Name=adv_object.artifacts.amulets.Necklace_of_Balance.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11011491
+Size=2433
+Unpacked=3251
+Date=1030136295
+Pointer=161250928
+Compression=3
+
+[File 57]
+Name=adv_object.artifacts.amulets.Necklace_of_Muses.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11013924
+Size=2432
+Unpacked=3249
+Date=1030136274
+Pointer=161253832
+Compression=3
+
+[File 58]
+Name=adv_object.artifacts.armor.Harmonic_Chainmail.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11016356
+Size=2432
+Unpacked=3250
+Date=1030136247
+Pointer=161255944
+Compression=3
+
+[File 59]
+Name=adv_object.artifacts.armor.Tiger_Breastplate.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11018788
+Size=2425
+Unpacked=3243
+Date=1030136225
+Pointer=161262544
+Compression=3
+
+[File 60]
+Name=adv_object.artifacts.boots.Wayfaring.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11021213
+Size=2429
+Unpacked=3247
+Date=1030136200
+Pointer=161262016
+Compression=3
+
+[File 61]
+Name=adv_object.artifacts.cloaks.Angel_Feather.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11023642
+Size=2432
+Unpacked=3250
+Date=1030136149
+Pointer=161256208
+Compression=3
+
+[File 62]
+Name=adv_object.artifacts.cloaks.Darkness.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11026074
+Size=2434
+Unpacked=3249
+Date=1030136172
+Pointer=161257792
+Compression=3
+
+[File 63]
+Name=adv_object.artifacts.Helms.Tiger.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11028508
+Size=2424
+Unpacked=3242
+Date=1030136124
+Pointer=161258584
+Compression=3
+
+[File 64]
+Name=adv_object.artifacts.miscellaneous.Aiffe's_Mandolin.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11030932
+Size=2429
+Unpacked=3247
+Date=1030135940
+Pointer=161261224
+Compression=3
+
+[File 65]
+Name=adv_object.artifacts.miscellaneous.Archmage's_Hat.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11033361
+Size=2426
+Unpacked=3245
+Date=1029456782
+Pointer=161255416
+Compression=3
+
+[File 66]
+Name=adv_object.artifacts.miscellaneous.Flame_of_Chaos.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11035787
+Size=2429
+Unpacked=3246
+Date=1030135908
+Pointer=161263336
+Compression=3
+
+[File 67]
+Name=adv_object.artifacts.Rings.Flares.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11038216
+Size=2428
+Unpacked=3246
+Date=1030136058
+Pointer=161259904
+Compression=3
+
+[File 68]
+Name=adv_object.artifacts.Rings.Light.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11040644
+Size=2428
+Unpacked=3245
+Date=1030136080
+Pointer=161271784
+Compression=3
+
+[File 69]
+Name=adv_object.artifacts.staves.Disruption.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11043072
+Size=2434
+Unpacked=3251
+Date=1030136026
+Pointer=161270200
+Compression=3
+
+[File 70]
+Name=adv_object.artifacts.weapons.Frost_Hammer.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11045506
+Size=2426
+Unpacked=3244
+Date=1030135994
+Pointer=161272048
+Compression=3
+
+[File 71]
+Name=adv_object.mage_guilds.chaos.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11047932
+Size=2421
+Unpacked=3241
+Date=1030135504
+Pointer=161267824
+Compression=3
+
+[File 72]
+Name=adv_object.mage_guilds.death.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11050353
+Size=2423
+Unpacked=3241
+Date=1030135536
+Pointer=161267296
+Compression=3
+
+[File 73]
+Name=adv_object.mage_guilds.life.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11052776
+Size=2420
+Unpacked=3240
+Date=1030135449
+Pointer=161263864
+Compression=3
+
+[File 74]
+Name=adv_object.mage_guilds.nature.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11055196
+Size=2422
+Unpacked=3242
+Date=1030135578
+Pointer=161266768
+Compression=3
+
+[File 75]
+Name=adv_object.mage_guilds.order.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11057618
+Size=2421
+Unpacked=3241
+Date=1030135584
+Pointer=161271520
+Compression=3
+
+[File 76]
+Name=adv_object.power ups.arena_magic.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11060039
+Size=2421
+Unpacked=3237
+Date=1030135670
+Pointer=161271256
+Compression=3
+
+[File 77]
+Name=adv_object.power ups.arena_might.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11062460
+Size=2423
+Unpacked=3237
+Date=1030135683
+Pointer=161265184
+Compression=3
+
+[File 78]
+Name=adv_actor.hero.Archmage.h4d
+Path=
+Type=adv_actor
+Offset=12774152
+Size=160
+Unpacked=1273
+Date=1030140193
+Pointer=161270728
+Compression=3
+
+[File 79]
+Name=adv_actor.hero.Bard.h4d
+Path=
+Type=adv_actor
+Offset=12774312
+Size=156
+Unpacked=1081
+Date=1030140509
+Pointer=161277064
+Compression=3
+
+[File 80]
+Name=adv_actor.hero.Dark_Priest.h4d
+Path=
+Type=adv_actor
+Offset=11064883
+Size=123
+Unpacked=1280
+Date=1030140635
+Pointer=161274952
+Compression=3
+
+[File 81]
+Name=adv_actor.hero.Dogwoggle_fighter.h4d
+Path=
+Type=adv_actor
+Offset=11065006
+Size=131
+Unpacked=1616
+Date=1030140755
+Pointer=161275216
+Compression=3
+
+[File 82]
+Name=adv_actor.hero.Wizard.h4d
+Path=
+Type=adv_actor
+Offset=12774468
+Size=161
+Unpacked=1177
+Date=1030140861
+Pointer=161275480
+Compression=3
+
+[File 83]
+Name=adv_actor.Dark Champion.h4d
+Path=
+Type=adv_actor
+Offset=11065137
+Size=132
+Unpacked=1136
+Date=1030139659
+Pointer=161273632
+Compression=3
+
+[File 84]
+Name=adv_actor.Evil Sorceress.h4d
+Path=
+Type=adv_actor
+Offset=11065269
+Size=126
+Unpacked=1232
+Date=1030139808
+Pointer=161279440
+Compression=3
+
+[File 85]
+Name=adv_actor.Gargantuan.h4d
+Path=
+Type=adv_actor
+Offset=11065395
+Size=122
+Unpacked=1040
+Date=1030139952
+Pointer=161280232
+Compression=3
+
+[File 86]
+Name=adv_actor.Goblin Knight.h4d
+Path=
+Type=adv_actor
+Offset=11065517
+Size=130
+Unpacked=1184
+Date=1030140066
+Pointer=161273104
+Compression=3
+
+[File 87]
+Name=actor_sequence.Dark Champion.wait.e.h4d
+Path=M:\Assets\Characters\!_expansion_creatures\DarkKnight\Adventure\_AdvWait\
+Type=actor_sequence
+Offset=11065647
+Size=3271
+Unpacked=5006
+Date=1030139659
+Pointer=161272312
+Compression=3
+
+[File 88]
+Name=actor_sequence.Evil Sorceress.stand.e.h4d
+Path=M:\Assets\Characters\!_expansion_creatures\Evil_Sorceress\adv\_wait\
+Type=actor_sequence
+Offset=11068918
+Size=2321
+Unpacked=3173
+Date=1030139808
+Pointer=161277592
+Compression=3
+
+[File 89]
+Name=actor_sequence.Gargantuan.stand.e.h4d
+Path=M:\Assets\Characters\!_expansion_creatures\Big_Spikey\adventure frames\_wait\
+Type=actor_sequence
+Offset=11071239
+Size=2956
+Unpacked=4500
+Date=1030139952
+Pointer=161278912
+Compression=3
+
+[File 90]
+Name=actor_sequence.Goblin Knight.stand.e.h4d
+Path=M:\Assets\Characters\!_expansion_creatures\Armored_Goblin\adventure\_wait\
+Type=actor_sequence
+Offset=11074195
+Size=2265
+Unpacked=3038
+Date=1030140066
+Pointer=161287888
+Compression=3
+
+[File 91]
+Name=actor_sequence.hero.Archmage.stand.e.h4d
+Path=M:\Assets\Characters\!_expansion_heroes\Archmage(Order_Magic_Male)\Adv\_Adv_stand\
+Type=actor_sequence
+Offset=12774629
+Size=3467
+Unpacked=5633
+Date=1030140193
+Pointer=161283136
+Compression=3
+
+[File 92]
+Name=actor_sequence.hero.Bard.stand.e.h4d
+Path=M:\Assets\Characters\!_expansion_heroes\Nature_Magic_Female_bard\Adv\_AdvStand\
+Type=actor_sequence
+Offset=12778096
+Size=3331
+Unpacked=5330
+Date=1030140509
+Pointer=161280760
+Compression=3
+
+[File 93]
+Name=actor_sequence.hero.Dark_Priest.wait.e.h4d
+Path=M:\Assets\Characters\!_expansion_heroes\Dark_Priest(Life_Magic_Female)\Adv\_Adv_stand\
+Type=actor_sequence
+Offset=11076460
+Size=3697
+Unpacked=5926
+Date=1030140635
+Pointer=161285776
+Compression=3
+
+[File 94]
+Name=actor_sequence.hero.Dogwoggle_fighter.stand.e.h4d
+Path=M:\Assets\Characters\!_expansion_heroes\Might_Male_Axe\might_male\_Advstand\
+Type=actor_sequence
+Offset=11080157
+Size=3396
+Unpacked=5506
+Date=1030140755
+Pointer=161282872
+Compression=3
+
+[File 95]
+Name=actor_sequence.hero.Wizard.stand.e.h4d
+Path=M:\Assets\Characters\!_expansion_heroes\Chaos_Magic_Male\Adv\_stand\
+Type=actor_sequence
+Offset=12781427
+Size=3554
+Unpacked=5710
+Date=1030140861
+Pointer=161284984
+Compression=3
+
+[File 96]
+Name=adv_object.artifacts.miscellaneous.Ice_Scales.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=11083553
+Size=2423
+Unpacked=3242
+Date=1030141275
+Pointer=161286304
+Compression=3
+
+[File 97]
+Name=layers.dialog.new_game.h4d
+Path=M:\Assets\layers\dialog\
+Type=layers
+Offset=11091807
+Size=626638
+Unpacked=1141544
+Date=1031076130
+Pointer=161284720
+Compression=3
+
+[File 98]
+Name=layers.dialog.new_game_details.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\
+Type=layers
+Offset=11718445
+Size=1527
+Unpacked=11900
+Date=1030573258
+Pointer=161282080
+Compression=3
+
+[File 99]
+Name=adv_object.miscellaneous.Garrison_Evil_R.h4d
+Path=M:\Assets\adv_object\Miscellaneous\Garrison_Evil
+Type=adv_object
+Offset=11719972
+Size=25316
+Unpacked=50827
+Date=1014060232
+Pointer=161285512
+Compression=3
+
+[File 100]
+Name=adv_object.miscellaneous.Dark_castle.h4d
+Path=
+Type=adv_object
+Offset=0
+Size=0
+Unpacked=0
+Date=1030661196
+Pointer=161289736
+Compression=3
+
+[File 101]
+Name=layers.dialog.campaign_Selection.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\
+Type=layers
+Offset=11745288
+Size=460069
+Unpacked=1123128
+Date=1030645808
+Pointer=161295280
+Compression=3
+
+[File 102]
+Name=layers.dialog.Skeleton_Transformer.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\
+Type=layers
+Offset=12205357
+Size=186053
+Unpacked=303262
+Date=1030728908
+Pointer=161290264
+Compression=3
+
+[File 103]
+Name=combat_object.castle.death.citadel.gate.heavy_damage.h4d
+Path=M:\Assets\combat_objects\Combat_Castles\Death\Citadel\gate\heavy_damage
+Type=combat_object
+Offset=12391410
+Size=96089
+Unpacked=284102
+Date=1031243994
+Pointer=161292640
+Compression=3
+
+[File 104]
+Name=adv_actor.mega dragon.h4d
+Path=
+Type=adv_actor
+Offset=12487499
+Size=126
+Unpacked=1040
+Date=1033490940
+Pointer=161291056
+Compression=3
+
+[File 105]
+Name=actor_sequence.mega dragon.wait.e.h4d
+Path=M:\Assets\Characters\Creatures\Dragon_Black\adv\_Adv_Wait\
+Type=actor_sequence
+Offset=12487625
+Size=11085
+Unpacked=21493
+Date=1033490940
+Pointer=161291584
+Compression=3
+
+[File 106]
+Name=adv_actor.Frenzied Gnasher.h4d
+Path=
+Type=adv_actor
+Offset=12498710
+Size=134
+Unpacked=1280
+Date=1033491680
+Pointer=161289208
+Compression=3
+
+[File 107]
+Name=actor_sequence.Frenzied Gnasher.wait.e.h4d
+Path=M:\Assets\Characters\Creatures\Behemoth\adv\_AdvWait\
+Type=actor_sequence
+Offset=12498844
+Size=9436
+Unpacked=18132
+Date=1033491674
+Pointer=161296336
+Compression=3
+
+[File 108]
+Name=adv_actor.catapult.h4d
+Path=
+Type=adv_actor
+Offset=12508280
+Size=152
+Unpacked=985
+Date=1035501775
+Pointer=161296600
+Compression=3
+
+[File 109]
+Name=actor_sequence.catapult.wait.e.h4d
+Path=M:\Assets\Characters\Creatures\Ballista\adv\_AdvStand\
+Type=actor_sequence
+Offset=12784981
+Size=2651
+Unpacked=3846
+Date=1035501767
+Pointer=161296864
+Compression=3
+
+[File 110]
+Name=adv_object.mage_guilds.Random.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=12508432
+Size=2422
+Unpacked=3243
+Date=1035245099
+Pointer=161297392
+Compression=3
+
+[File 111]
+Name=adv_object.creature generators.Beast_pen.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=12510854
+Size=2442
+Unpacked=3266
+Date=1035245131
+Pointer=161298184
+Compression=3
+
+[File 112]
+Name=adv_object.creature generators.Dark_knights_sanctum.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=12513296
+Size=2439
+Unpacked=3263
+Date=1035245137
+Pointer=161301880
+Compression=3
+
+[File 113]
+Name=adv_object.creature generators.Gargantuan_dell.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=12515735
+Size=2436
+Unpacked=3260
+Date=1035245148
+Pointer=161305840
+Compression=3
+
+[File 114]
+Name=adv_object.creature generators.Goblin_armory.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=12518171
+Size=2438
+Unpacked=3263
+Date=1035245159
+Pointer=161303992
+Compression=3
+
+[File 115]
+Name=adv_object.creature generators.Ward_sorcery.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=12520609
+Size=2439
+Unpacked=3264
+Date=1035245174
+Pointer=161302144
+Compression=3
+
+[File 116]
+Name=adv_object.creature generators.Siege_workshop.h4d
+Path=M:\Assets\adv_object\!!_expansion_objects\Artifacts\_Pointy_Hat\
+Type=adv_object
+Offset=12523048
+Size=2432
+Unpacked=3258
+Date=1035245165
+Pointer=161297920
+Compression=3
+
+[File 117]
+Name=layers.dialog.recruit.h4d
+Path=M:\Assets\layers\dialog\
+Type=layers
+Offset=12525480
+Size=248672
+Unpacked=481120
+Date=1034632810
+Pointer=161305576
+Compression=3
+
+[File 118]
+Name=adv_actor.hero.Baron_Tarkin.h4d
+Path=
+Type=adv_actor
+Offset=12787632
+Size=164
+Unpacked=1465
+Date=1035933614
+Pointer=161298712
+Compression=3
+
+[File 119]
+Name=actor_sequence.hero.Baron_Tarkin.stand.e.h4d
+Path=M:\Assets\Characters\!_expansion_heroes\Archmage(Order_Magic_Male)\Adv\_Adv_stand\
+Type=actor_sequence
+Offset=12787796
+Size=3472
+Unpacked=5637
+Date=1035933614
+Pointer=161302672
+Compression=3
+
+[File 120]
+Name=adv_actor.hero.Erutan_Revol.h4d
+Path=
+Type=adv_actor
+Offset=12791268
+Size=162
+Unpacked=1465
+Date=1035933740
+Pointer=161300560
+Compression=3
+
+[File 121]
+Name=actor_sequence.hero.Erutan_Revol.stand.e.h4d
+Path=M:\Assets\Characters\!_h4x2_heroes\Erutan_Revol\adv\_AdvStand\
+Type=actor_sequence
+Offset=12791430
+Size=3252
+Unpacked=5207
+Date=1035933740
+Pointer=161301088
+Compression=3
+
+[File 122]
+Name=adv_actor.hero.Mongo.h4d
+Path=
+Type=adv_actor
+Offset=12794682
+Size=156
+Unpacked=1129
+Date=1035933843
+Pointer=161312968
+Compression=3
+
+[File 123]
+Name=actor_sequence.hero.Mongo.stand.e.h4d
+Path=M:\Assets\Characters\!_h4x2_heroes\Mongo\adv\_AdvStand\
+Type=actor_sequence
+Offset=12794838
+Size=3194
+Unpacked=4643
+Date=1035933843
+Pointer=161306632
+Compression=3
+
+[File 124]
+Name=adv_actor.hero.Mysterio_the_Magnificent.h4d
+Path=
+Type=adv_actor
+Offset=12798032
+Size=206
+Unpacked=2341
+Date=1035933982
+Pointer=161309536
+Compression=3
+
+[File 125]
+Name=actor_sequence.hero.Mysterio_the_Magnificent.stand.e.h4d
+Path=M:\Assets\Characters\!_h4x2_heroes\Mysterio_the_Magnificent\adv\_Adv_stand\
+Type=actor_sequence
+Offset=12798238
+Size=3229
+Unpacked=4705
+Date=1035933982
+Pointer=161306368
+Compression=3
+
+[File 126]
+Name=adv_actor.hero.spazz_sword.h4d
+Path=
+Type=adv_actor
+Offset=12801467
+Size=159
+Unpacked=1417
+Date=1035934115
+Pointer=161311648
+Compression=3
+
+[File 127]
+Name=actor_sequence.hero.spazz_sword.stand.e.h4d
+Path=M:\Assets\Characters\!_h4x2_heroes\Spazz_sword\adv\_Adv_stand\
+Type=actor_sequence
+Offset=12801626
+Size=3393
+Unpacked=4919
+Date=1035934115
+Pointer=161307688
+Compression=3
+
+[File 128]
+Name=layers.icons.map_type.h4d
+Path=M:\Assets\layers\icons\
+Type=layers
+Offset=8
+Size=8656
+Unpacked=11793
+Date=1039135390
+Pointer=161311384
+Compression=3
+
+
+[End]

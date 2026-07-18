@@ -1,0 +1,1369 @@
+mh4 dump file of the h4r file D:/Games/Heroes/Heroes of Might and Magic IV/HoMM4_Tools/MH4a/pakas/storm.h4r (124 files)
+
+
+[File 1]
+Name=layers.icons.artifacts.armor.h4d
+Path=M:\Assets\layers\icons\artifacts\
+Type=layers
+Offset=11972
+Size=148933
+Unpacked=208036
+Date=1029187194
+Pointer=157257712
+Compression=3
+
+[File 2]
+Name=layers.icons.artifacts.item.h4d
+Path=M:\Assets\layers\icons\artifacts\
+Type=layers
+Offset=160905
+Size=187292
+Unpacked=258520
+Date=1029186974
+Pointer=157257976
+Compression=3
+
+[File 3]
+Name=layers.icons.artifacts.weapon.h4d
+Path=M:\Assets\layers\icons\artifacts\
+Type=layers
+Offset=348197
+Size=77117
+Unpacked=108152
+Date=1029187340
+Pointer=157260352
+Compression=3
+
+[File 4]
+Name=layers.dialog.Blacksmith.parchment.item.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\blacksmith\
+Type=layers
+Offset=425314
+Size=24764
+Unpacked=43021
+Date=1029178542
+Pointer=157258504
+Compression=3
+
+[File 5]
+Name=layers.dialog.Blacksmith.parchment.potion.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\blacksmith\
+Type=layers
+Offset=450078
+Size=24697
+Unpacked=42725
+Date=1029178562
+Pointer=157261672
+Compression=3
+
+[File 6]
+Name=layers.Dialog.Coliseum.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\
+Type=layers
+Offset=474775
+Size=200628
+Unpacked=290795
+Date=1029346620
+Pointer=157262728
+Compression=3
+
+[File 7]
+Name=layers.icons.hero.chaos.52.h4d
+Path=M:\Assets\layers\icons\hero\
+Type=layers
+Offset=675403
+Size=144787
+Unpacked=183778
+Date=1029439910
+Pointer=157255864
+Compression=3
+
+[File 8]
+Name=layers.icons.hero.chaos.82.h4d
+Path=M:\Assets\layers\icons\hero\
+Type=layers
+Offset=820190
+Size=268071
+Unpacked=370558
+Date=1029440220
+Pointer=157256656
+Compression=3
+
+[File 9]
+Name=layers.icons.hero.death.52.h4d
+Path=M:\Assets\layers\icons\hero\
+Type=layers
+Offset=1088261
+Size=150418
+Unpacked=190458
+Date=1030463634
+Pointer=157260616
+Compression=3
+
+[File 10]
+Name=layers.icons.hero.death.82.h4d
+Path=M:\Assets\layers\icons\hero\
+Type=layers
+Offset=1238679
+Size=279478
+Unpacked=386714
+Date=1030463892
+Pointer=157261144
+Compression=3
+
+[File 11]
+Name=layers.icons.hero.life.52.h4d
+Path=M:\Assets\layers\icons\hero\
+Type=layers
+Offset=1518157
+Size=146478
+Unpacked=190480
+Date=1029440786
+Pointer=157267216
+Compression=3
+
+[File 12]
+Name=layers.icons.hero.life.82.h4d
+Path=M:\Assets\layers\icons\hero\
+Type=layers
+Offset=1664635
+Size=269047
+Unpacked=384052
+Date=1029440928
+Pointer=157267744
+Compression=3
+
+[File 13]
+Name=layers.icons.hero.might.52.h4d
+Path=C:\Heroes4\working\game\data\layers\icons\hero\
+Type=layers
+Offset=1933682
+Size=72801
+Unpacked=93551
+Date=1029543804
+Pointer=157268272
+Compression=3
+
+[File 14]
+Name=layers.icons.hero.might.82.h4d
+Path=C:\Heroes4\working\game\data\layers\icons\hero\
+Type=layers
+Offset=2006483
+Size=135859
+Unpacked=188639
+Date=1029543868
+Pointer=157268536
+Compression=3
+
+[File 15]
+Name=layers.icons.hero.nature.52.h4d
+Path=M:\Assets\layers\icons\hero\
+Type=layers
+Offset=2142342
+Size=141789
+Unpacked=183773
+Date=1029441102
+Pointer=157264312
+Compression=3
+
+[File 16]
+Name=layers.icons.hero.nature.82.h4d
+Path=M:\Assets\layers\icons\hero\
+Type=layers
+Offset=2284131
+Size=262896
+Unpacked=370553
+Date=1029441246
+Pointer=157269064
+Compression=3
+
+[File 17]
+Name=layers.icons.hero.order.52.h4d
+Path=M:\Assets\layers\icons\hero\
+Type=layers
+Offset=2547027
+Size=144477
+Unpacked=187134
+Date=1029441390
+Pointer=157270384
+Compression=3
+
+[File 18]
+Name=layers.icons.hero.order.82.h4d
+Path=M:\Assets\layers\icons\hero\
+Type=layers
+Offset=2691504
+Size=262794
+Unpacked=377310
+Date=1029441516
+Pointer=157271968
+Compression=3
+
+[File 19]
+Name=layers.icons.creatures.52.h4d
+Path=M:\Assets\layers\icons\
+Type=layers
+Offset=2954298
+Size=183362
+Unpacked=237355
+Date=1030376928
+Pointer=157270912
+Compression=3
+
+[File 20]
+Name=layers.icons.creatures.82.h4d
+Path=M:\Assets\layers\icons\
+Type=layers
+Offset=3137660
+Size=341453
+Unpacked=478471
+Date=1030376966
+Pointer=157271440
+Compression=3
+
+[File 21]
+Name=sound.Voice_Over.H4x1_campaign_1_epilogue.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Voice
+Type=sound
+Offset=3479113
+Size=214157
+Unpacked=234204
+Date=1029863789
+Pointer=157266688
+Compression=3
+
+[File 22]
+Name=sound.Voice_Over.H4x1_campaign_1_prologue.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Voice
+Type=sound
+Offset=3693270
+Size=350340
+Unpacked=377564
+Date=1029863790
+Pointer=157276984
+Compression=3
+
+[File 23]
+Name=sound.Voice_Over.H4x1_campaign_2_epilogue.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Voice
+Type=sound
+Offset=4043610
+Size=311011
+Unpacked=335141
+Date=1029863791
+Pointer=157276720
+Compression=3
+
+[File 24]
+Name=sound.Voice_Over.H4x1_campaign_2_prologue.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Voice
+Type=sound
+Offset=4354621
+Size=313935
+Unpacked=343918
+Date=1029863792
+Pointer=157278040
+Compression=3
+
+[File 25]
+Name=sound.Voice_Over.H4x1_campaign_3_epilogue.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Voice
+Type=sound
+Offset=4668556
+Size=176807
+Unpacked=188855
+Date=1029863793
+Pointer=157278304
+Compression=3
+
+[File 26]
+Name=sound.Voice_Over.H4x1_campaign_3_prologue.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Voice
+Type=sound
+Offset=4845363
+Size=272092
+Unpacked=294547
+Date=1029863794
+Pointer=157278568
+Compression=3
+
+[File 27]
+Name=sound.Voice_Over.H4x1_campaign_4_epilogue.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Voice
+Type=sound
+Offset=5117455
+Size=282630
+Unpacked=311735
+Date=1029863794
+Pointer=157277248
+Compression=3
+
+[File 28]
+Name=sound.Voice_Over.H4x1_campaign_4_prologue.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Voice
+Type=sound
+Offset=5400085
+Size=381456
+Unpacked=419621
+Date=1029863795
+Pointer=157277512
+Compression=3
+
+[File 29]
+Name=sound.Voice_Over.H4x1_campaign_5_epilogue.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Voice
+Type=sound
+Offset=5781541
+Size=164988
+Unpacked=177518
+Date=1029863796
+Pointer=157273552
+Compression=3
+
+[File 30]
+Name=sound.Voice_Over.H4x1_campaign_5_prologue.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Voice
+Type=sound
+Offset=5946529
+Size=239758
+Unpacked=258341
+Date=1029863797
+Pointer=157275928
+Compression=3
+
+[File 31]
+Name=sound.Voice_Over.H4x1_campaign_6_epilogue.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Voice
+Type=sound
+Offset=6186287
+Size=472347
+Unpacked=508855
+Date=1029863798
+Pointer=157276456
+Compression=3
+
+[File 32]
+Name=sound.Voice_Over.H4x1_campaign_6_prologue.h4d
+Path=M:\Assets\audio\!_H4_Expansion_Sounds\Voice
+Type=sound
+Offset=6658634
+Size=274643
+Unpacked=303690
+Date=1029863799
+Pointer=157288336
+Compression=3
+
+[File 33]
+Name=layers.Campaign_Splashscreens.192x154.Campaign1A.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=6933277
+Size=26910
+Unpacked=31602
+Date=1029869127
+Pointer=157281736
+Compression=3
+
+[File 34]
+Name=layers.Campaign_Splashscreens.192x154.Campaign1B.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=6960187
+Size=24268
+Unpacked=31602
+Date=1029970359
+Pointer=157281472
+Compression=3
+
+[File 35]
+Name=layers.Campaign_Splashscreens.192x154.Campaign1C.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=6984455
+Size=27157
+Unpacked=31602
+Date=1029970365
+Pointer=157287808
+Compression=3
+
+[File 36]
+Name=layers.Campaign_Splashscreens.192x154.Campaign1D.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7011612
+Size=24626
+Unpacked=31602
+Date=1029970373
+Pointer=157289128
+Compression=3
+
+[File 37]
+Name=layers.Campaign_Splashscreens.192x154.Campaign1E.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7036238
+Size=25749
+Unpacked=31602
+Date=1029970379
+Pointer=157285168
+Compression=3
+
+[File 38]
+Name=layers.Campaign_Splashscreens.192x154.Campaign2A.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7061987
+Size=23097
+Unpacked=31602
+Date=1029948112
+Pointer=157284376
+Compression=3
+
+[File 39]
+Name=layers.Campaign_Splashscreens.192x154.Campaign2B.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7085084
+Size=24407
+Unpacked=31602
+Date=1029970388
+Pointer=157288072
+Compression=3
+
+[File 40]
+Name=layers.Campaign_Splashscreens.192x154.Campaign2C.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7109491
+Size=20787
+Unpacked=31602
+Date=1029970397
+Pointer=157282264
+Compression=3
+
+[File 41]
+Name=layers.Campaign_Splashscreens.192x154.Campaign2D.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7130278
+Size=26770
+Unpacked=31602
+Date=1029970407
+Pointer=157286752
+Compression=3
+
+[File 42]
+Name=layers.Campaign_Splashscreens.192x154.Campaign3A.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7157048
+Size=25545
+Unpacked=31602
+Date=1029869333
+Pointer=157284904
+Compression=3
+
+[File 43]
+Name=layers.Campaign_Splashscreens.192x154.Campaign3B.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7182593
+Size=26348
+Unpacked=31602
+Date=1029970438
+Pointer=157289392
+Compression=3
+
+[File 44]
+Name=layers.Campaign_Splashscreens.192x154.Campaign3C.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7208941
+Size=28061
+Unpacked=31602
+Date=1029970447
+Pointer=157290976
+Compression=3
+
+[File 45]
+Name=layers.Campaign_Splashscreens.192x154.Campaign3D.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7237002
+Size=24738
+Unpacked=31602
+Date=1029970455
+Pointer=157295464
+Compression=3
+
+[File 46]
+Name=layers.Campaign_Splashscreens.192x154.Campaign3E.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7261740
+Size=27571
+Unpacked=31602
+Date=1029970464
+Pointer=157293880
+Compression=3
+
+[File 47]
+Name=layers.Campaign_Splashscreens.192x154.Campaign3F.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7289311
+Size=26040
+Unpacked=31602
+Date=1029970472
+Pointer=157291504
+Compression=3
+
+[File 48]
+Name=layers.Campaign_Splashscreens.192x154.Campaign4A.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7315351
+Size=26687
+Unpacked=31602
+Date=1029869540
+Pointer=157291768
+Compression=3
+
+[File 49]
+Name=layers.Campaign_Splashscreens.192x154.Campaign4B.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7342038
+Size=27933
+Unpacked=31602
+Date=1029970491
+Pointer=157291240
+Compression=3
+
+[File 50]
+Name=layers.Campaign_Splashscreens.192x154.Campaign4C.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7369971
+Size=26775
+Unpacked=31602
+Date=1029970499
+Pointer=157294936
+Compression=3
+
+[File 51]
+Name=layers.Campaign_Splashscreens.192x154.Campaign4D.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7396746
+Size=24725
+Unpacked=31602
+Date=1029970506
+Pointer=157297576
+Compression=3
+
+[File 52]
+Name=layers.Campaign_Splashscreens.192x154.Campaign5A.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7421471
+Size=24393
+Unpacked=31602
+Date=1029869612
+Pointer=157289920
+Compression=3
+
+[File 53]
+Name=layers.Campaign_Splashscreens.192x154.Campaign5B.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7445864
+Size=27106
+Unpacked=31602
+Date=1029970514
+Pointer=157290712
+Compression=3
+
+[File 54]
+Name=layers.Campaign_Splashscreens.192x154.Campaign5C.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7472970
+Size=24715
+Unpacked=31602
+Date=1029970530
+Pointer=157298368
+Compression=3
+
+[File 55]
+Name=layers.Campaign_Splashscreens.192x154.Campaign5D.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7497685
+Size=26068
+Unpacked=31602
+Date=1029970539
+Pointer=157302328
+Compression=3
+
+[File 56]
+Name=layers.Campaign_Splashscreens.192x154.Campaign6A.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7523753
+Size=27311
+Unpacked=31602
+Date=1029869680
+Pointer=157305232
+Compression=3
+
+[File 57]
+Name=layers.Campaign_Splashscreens.192x154.Campaign6C.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7551064
+Size=27049
+Unpacked=31602
+Date=1029970557
+Pointer=157298896
+Compression=3
+
+[File 58]
+Name=layers.Campaign_Splashscreens.192x154.Campaign6D.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7578113
+Size=25592
+Unpacked=31602
+Date=1029970562
+Pointer=157300480
+Compression=3
+
+[File 59]
+Name=layers.Campaign_Splashscreens.192x154.Campaign6B.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=7603705
+Size=26939
+Unpacked=31602
+Date=1029970549
+Pointer=157301536
+Compression=3
+
+[File 60]
+Name=layers.Campaign_Splashscreens.426x340.Campaign1A.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=7630644
+Size=106925
+Unpacked=148362
+Date=1029870222
+Pointer=157301008
+Compression=3
+
+[File 61]
+Name=layers.Campaign_Splashscreens.426x340.Campaign1B.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=7737569
+Size=102828
+Unpacked=148362
+Date=1029870248
+Pointer=157303648
+Compression=3
+
+[File 62]
+Name=layers.Campaign_Splashscreens.426x340.Campaign1C.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=7840397
+Size=120726
+Unpacked=148362
+Date=1029870269
+Pointer=157304440
+Compression=3
+
+[File 63]
+Name=layers.Campaign_Splashscreens.426x340.Campaign1D.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=7961123
+Size=107504
+Unpacked=148362
+Date=1029870287
+Pointer=157306024
+Compression=3
+
+[File 64]
+Name=layers.Campaign_Splashscreens.426x340.Campaign1E.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=8068627
+Size=107874
+Unpacked=148362
+Date=1029870300
+Pointer=157306552
+Compression=3
+
+[File 65]
+Name=layers.Campaign_Splashscreens.426x340.Campaign2A.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=8176501
+Size=94555
+Unpacked=148362
+Date=1029947970
+Pointer=157311040
+Compression=3
+
+[File 66]
+Name=layers.Campaign_Splashscreens.426x340.Campaign2B.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=8271056
+Size=101548
+Unpacked=148362
+Date=1029947989
+Pointer=157309984
+Compression=3
+
+[File 67]
+Name=layers.Campaign_Splashscreens.426x340.Campaign2C.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=8372604
+Size=80756
+Unpacked=148362
+Date=1029948006
+Pointer=157314208
+Compression=3
+
+[File 68]
+Name=layers.Campaign_Splashscreens.426x340.Campaign2D.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=8453360
+Size=114218
+Unpacked=148362
+Date=1029950601
+Pointer=157310512
+Compression=3
+
+[File 69]
+Name=layers.Campaign_Splashscreens.426x340.Campaign3A.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=8567578
+Size=112288
+Unpacked=148362
+Date=1029870385
+Pointer=157309720
+Compression=3
+
+[File 70]
+Name=layers.Campaign_Splashscreens.426x340.Campaign3B.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=8679866
+Size=107103
+Unpacked=148362
+Date=1029870401
+Pointer=157312096
+Compression=3
+
+[File 71]
+Name=layers.Campaign_Splashscreens.426x340.Campaign3C.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=8786969
+Size=122401
+Unpacked=148362
+Date=1029870420
+Pointer=157312624
+Compression=3
+
+[File 72]
+Name=layers.Campaign_Splashscreens.426x340.Campaign3D.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=8909370
+Size=109055
+Unpacked=148362
+Date=1029870434
+Pointer=157312888
+Compression=3
+
+[File 73]
+Name=layers.Campaign_Splashscreens.426x340.Campaign3E.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=9018425
+Size=122962
+Unpacked=148362
+Date=1029870455
+Pointer=157313152
+Compression=3
+
+[File 74]
+Name=layers.Campaign_Splashscreens.426x340.Campaign3F.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=9141387
+Size=115029
+Unpacked=148362
+Date=1029870470
+Pointer=157313416
+Compression=3
+
+[File 75]
+Name=layers.Campaign_Splashscreens.426x340.Campaign4A.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=9256416
+Size=110667
+Unpacked=148362
+Date=1029870485
+Pointer=157320280
+Compression=3
+
+[File 76]
+Name=layers.Campaign_Splashscreens.426x340.Campaign4B.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=9367083
+Size=122153
+Unpacked=148362
+Date=1029870500
+Pointer=157319224
+Compression=3
+
+[File 77]
+Name=layers.Campaign_Splashscreens.426x340.Campaign4C.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=9489236
+Size=117190
+Unpacked=149042
+Date=1029870518
+Pointer=157319488
+Compression=3
+
+[File 78]
+Name=layers.Campaign_Splashscreens.426x340.Campaign4D.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=9606426
+Size=104839
+Unpacked=148362
+Date=1029870536
+Pointer=157314736
+Compression=3
+
+[File 79]
+Name=layers.Campaign_Splashscreens.426x340.Campaign5A.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=9711265
+Size=108776
+Unpacked=148362
+Date=1029870551
+Pointer=157318168
+Compression=3
+
+[File 80]
+Name=layers.Campaign_Splashscreens.426x340.Campaign5B.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=9820041
+Size=116910
+Unpacked=148362
+Date=1029870570
+Pointer=157318696
+Compression=3
+
+[File 81]
+Name=layers.Campaign_Splashscreens.426x340.Campaign5C.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=9936951
+Size=101990
+Unpacked=149042
+Date=1029870587
+Pointer=157322128
+Compression=3
+
+[File 82]
+Name=layers.Campaign_Splashscreens.426x340.Campaign5D.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=10038941
+Size=108971
+Unpacked=148362
+Date=1029870600
+Pointer=157315792
+Compression=3
+
+[File 83]
+Name=layers.Campaign_Splashscreens.426x340.Campaign6A.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=10147912
+Size=112725
+Unpacked=149382
+Date=1029870611
+Pointer=157316056
+Compression=3
+
+[File 84]
+Name=layers.Campaign_Splashscreens.426x340.Campaign6B.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=10260637
+Size=117298
+Unpacked=148362
+Date=1029870624
+Pointer=157316848
+Compression=3
+
+[File 85]
+Name=layers.Campaign_Splashscreens.426x340.Campaign6C.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=10377935
+Size=114190
+Unpacked=148362
+Date=1029870637
+Pointer=157318960
+Compression=3
+
+[File 86]
+Name=layers.Campaign_Splashscreens.426x340.Campaign6D.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=10492125
+Size=104788
+Unpacked=148362
+Date=1029870651
+Pointer=157327408
+Compression=3
+
+[File 87]
+Name=layers.Campaign_Splashscreens.192x154.Campaign6A_grayed.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=10596913
+Size=28229
+Unpacked=31596
+Date=1029869688
+Pointer=157326616
+Compression=3
+
+[File 88]
+Name=layers.Campaign_Splashscreens.426x340.Campaign2E.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\426x340\
+Type=layers
+Offset=10625142
+Size=94394
+Unpacked=148362
+Date=1029948023
+Pointer=157329784
+Compression=3
+
+[File 89]
+Name=bitmap_raw.menu.main.0800.h4d
+Path=M:\Assets\bitmap_raw\H4x1
+Type=bitmap_raw
+Offset=10719536
+Size=668273
+Unpacked=1440016
+Date=1030383148
+Pointer=157324504
+Compression=3
+
+[File 90]
+Name=bitmap_raw.menu.main.1024.h4d
+Path=M:\Assets\bitmap_raw\H4x1
+Type=bitmap_raw
+Offset=11387809
+Size=1076286
+Unpacked=2359312
+Date=1030383150
+Pointer=157328200
+Compression=3
+
+[File 91]
+Name=bitmap_raw.menu.main.1280.h4d
+Path=M:\Assets\bitmap_raw\H4x1
+Type=bitmap_raw
+Offset=12464095
+Size=1637185
+Unpacked=3932176
+Date=1030383155
+Pointer=157327144
+Compression=3
+
+[File 92]
+Name=layers.Campaign_Splashscreens.192x154.Campaign2E.h4d
+Path=M:\Assets\layers\Campaign_Splashscreens\H4x1\192x154\
+Type=layers
+Offset=14101280
+Size=23831
+Unpacked=31602
+Date=1029970415
+Pointer=157323712
+Compression=3
+
+[File 93]
+Name=bink.storm_intro.h4d
+Path=M:\Assets\animation\!_H4x1_Intro\
+Type=bink
+Offset=15454556
+Size=21134828
+Unpacked=21134828
+Date=1029971828
+Pointer=157325032
+Compression=1
+
+[File 94]
+Name=layers.Dialog.win_lose.gs_Prologue_x1024.h4d
+Path=M:\Assets\layers\dialog\Win_lose\
+Type=layers
+Offset=14125111
+Size=269239
+Unpacked=800196
+Date=1029434994
+Pointer=157330840
+Compression=3
+
+[File 95]
+Name=layers.Dialog.win_lose.gs_Prologue_x1280.h4d
+Path=M:\Assets\layers\dialog\Win_lose\
+Type=layers
+Offset=14394350
+Size=504455
+Unpacked=1327650
+Date=1029434894
+Pointer=157325296
+Compression=3
+
+[File 96]
+Name=layers.Dialog.win_lose.gs_Prologue_x800.h4d
+Path=M:\Assets\layers\dialog\Win_lose\
+Type=layers
+Offset=14898805
+Size=93844
+Unpacked=803001
+Date=1029433560
+Pointer=157333744
+Compression=3
+
+[File 97]
+Name=layers.dialog.storm_campaign_Selection.h4d
+Path=C:\Heroes4\working\game\data\layers\dialog\
+Type=layers
+Offset=14992649
+Size=461907
+Unpacked=905873
+Date=1030645794
+Pointer=157334008
+Compression=3
+
+[File 98]
+Name=game_maps.storm_campaign.Archmage.h4d
+Path=M:\Expansion maps\2-Campaign
+Type=game_maps
+Offset=36589384
+Size=189574
+Unpacked=189574
+Date=1031257582
+Pointer=157333480
+Compression=1
+
+[File 99]
+Name=game_maps.storm_campaign.Bard.h4d
+Path=M:\Expansion maps\2-Campaign
+Type=game_maps
+Offset=36778958
+Size=159090
+Unpacked=159090
+Date=1031257583
+Pointer=157337176
+Compression=1
+
+[File 100]
+Name=game_maps.storm_campaign.ChaosOrder.h4d
+Path=M:\Expansion maps\2-Campaign
+Type=game_maps
+Offset=36938048
+Size=189548
+Unpacked=189548
+Date=1031257583
+Pointer=157339552
+Compression=1
+
+[File 101]
+Name=game_maps.storm_campaign.Death-Life.h4d
+Path=M:\Expansion maps\2-Campaign
+Type=game_maps
+Offset=37127596
+Size=177004
+Unpacked=177004
+Date=1031257584
+Pointer=157339816
+Compression=1
+
+[File 102]
+Name=game_maps.storm_campaign.Dogwoggle Campaign.h4d
+Path=M:\Expansion maps\2-Campaign
+Type=game_maps
+Offset=37304600
+Size=169224
+Unpacked=169224
+Date=1031257584
+Pointer=157339024
+Compression=1
+
+[File 103]
+Name=game_maps.storm_campaign.GatheringStorm.h4d
+Path=M:\Expansion maps\2-Campaign
+Type=game_maps
+Offset=37473824
+Size=166097
+Unpacked=166097
+Date=1031257585
+Pointer=157332160
+Compression=1
+
+[File 104]
+Name=sound.dark champion.Die.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=37960945
+Size=309183
+Unpacked=402959
+Date=1031545975
+Pointer=157338760
+Compression=3
+
+[File 105]
+Name=sound.dark champion.flinch.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=38270128
+Size=136940
+Unpacked=160779
+Date=1031545975
+Pointer=157331896
+Compression=3
+
+[File 106]
+Name=sound.dark champion.Melee.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=38407068
+Size=92110
+Unpacked=256015
+Date=1031545975
+Pointer=157332952
+Compression=3
+
+[File 107]
+Name=sound.dark champion.Walk.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=38499178
+Size=100068
+Unpacked=117775
+Date=1031545975
+Pointer=157342456
+Compression=3
+
+[File 108]
+Name=sound.Evil Sorceress.Cast_Spell.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=38599246
+Size=273361
+Unpacked=367463
+Date=1031545975
+Pointer=157340080
+Compression=3
+
+[File 109]
+Name=sound.Evil Sorceress.Die.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=38872607
+Size=134666
+Unpacked=275471
+Date=1031545975
+Pointer=157340344
+Compression=3
+
+[File 110]
+Name=sound.Evil Sorceress.Melee.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=39130944
+Size=110396
+Unpacked=183055
+Date=1031545975
+Pointer=157341400
+Compression=3
+
+[File 111]
+Name=sound.Evil Sorceress.postwalk.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=39241340
+Size=23576
+Unpacked=29545
+Date=1031545975
+Pointer=157342984
+Compression=3
+
+[File 112]
+Name=sound.Evil Sorceress.prewalk.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=39264916
+Size=23420
+Unpacked=29545
+Date=1031545975
+Pointer=157343776
+Compression=3
+
+[File 113]
+Name=sound.gargantuan.Die.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=39288336
+Size=189066
+Unpacked=318223
+Date=1031545975
+Pointer=157344568
+Compression=3
+
+[File 114]
+Name=sound.gargantuan.Fidget.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=39477402
+Size=74050
+Unpacked=307215
+Date=1031545975
+Pointer=157346680
+Compression=3
+
+[File 115]
+Name=sound.gargantuan.Flinch.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=39551452
+Size=164368
+Unpacked=188327
+Date=1031545975
+Pointer=157340608
+Compression=3
+
+[File 116]
+Name=sound.gargantuan.Walk.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=39876172
+Size=85304
+Unpacked=157711
+Date=1031545976
+Pointer=157346416
+Compression=3
+
+[File 117]
+Name=sound.goblin knight.Cast_Spell.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=39961476
+Size=228701
+Unpacked=322699
+Date=1031545976
+Pointer=157347472
+Compression=3
+
+[File 118]
+Name=sound.goblin knight.Die.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=40190177
+Size=201304
+Unpacked=296711
+Date=1031545976
+Pointer=157355920
+Compression=3
+
+[File 119]
+Name=sound.goblin knight.Flinch.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=40391481
+Size=155570
+Unpacked=188683
+Date=1031545976
+Pointer=157356712
+Compression=3
+
+[File 120]
+Name=sound.goblin knight.Melee.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=40547051
+Size=81507
+Unpacked=213347
+Date=1031545976
+Pointer=157350904
+Compression=3
+
+[File 121]
+Name=sound.goblin knight.Walk.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=40628558
+Size=136388
+Unpacked=195427
+Date=1031545976
+Pointer=157353016
+Compression=3
+
+[File 122]
+Name=sound.gargantuan.Melee.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=37653605
+Size=19704
+Unpacked=58777
+Date=1031547472
+Pointer=157348792
+Compression=3
+
+[File 123]
+Name=sound.gargantuan.Ranged.h4d
+Path=C:\homm4\GameSync\data\creature
+Type=sound
+Offset=37673309
+Size=41352
+Unpacked=58777
+Date=1031547472
+Pointer=157349320
+Compression=3
+
+[File 124]
+Name=sound.Evil Sorceress.Flinch.h4d
+Path=C:\homm4\GameSync\data\creature\
+Type=sound
+Offset=37714661
+Size=28080
+Unpacked=35343
+Date=1031548433
+Pointer=157349848
+Compression=3
+
+
+[End]
