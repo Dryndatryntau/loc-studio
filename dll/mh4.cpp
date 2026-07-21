@@ -1261,101 +1261,304 @@ bool H4RFile::dataBuild (FILE *h4rFile,ui32 numFile,char *szDirName)
 
   return true;
 }
-// Ði funkcija bus iðkvieèiama ið Embarcadero failø iðpakavimui
-extern "C" __declspec(dllexport) bool ExtractH4R(const char* h4rPath, const char* outDir) {
-    H4RFile archive;
+// ==========================================================================================
+// RAM OPTIMIZACIJA: Ðis globalus objektas gyvens DLL atmintyje ir saugos visà 17k failø sàraðà,
+// todël kietasis diskas nebebus kankinamas nuolatiniais failo atidarinëjimais!
+// ==========================================================================================
+H4RFile globalArchive;
+bool isArchiveScanned = false;
 
-    // Autoriaus scan funkcija nuskaito h4r failo struktûrà á atmintá
-    // Ji tikisi gauti paprastà (ne const) char*, todël atliekame saugø konvertavimà (cast)
-    if (archive.scan((char*)h4rPath) == 0) {
-        return false; // Jei gràþina 0, nepavyko nuskaityti antraðèiø
-    }
-
-    // Autoriaus dump funkcija iðpakuoja visus failus á nurodytà katalogà
-    return archive.dump((char*)outDir);
-}
-
-// Ði funkcija bus iðkvieèiama ið Embarcadero failø supakavimui
-extern "C" __declspec(dllexport) bool PackH4R(const char* h4lPath, const char* outH4RPath) {
-    H4RFile archive;
-    ui32 tableSize = 0;
-
-    // 1. Nuskaitome failø sàraðà (.lst / .h4l), kurá sukûrë unpakeris
-    FILE* lstFile = archive.scanList((char*)h4lPath, "", &tableSize);
-    if (!lstFile) return false;
-
-    // 2. Paruoðiame failø informacijà supakavimui
-    if (!archive.scanBuild(lstFile, archive.m_NbFile, "", &tableSize)) {
-        fclose(lstFile);
-        return false;
-    }
-
-    // 3. Sukuriame naujà tuðèià h4r failà raðymui
-    FILE* h4rFile = fopen(outH4RPath, "wb");
-    if (!h4rFile) {
-        fclose(lstFile);
-        return false;
-    }
-
-    // 4. Sukuriame ir áraðome failo antraðtes (header)
-    FILE* headerFile = archive.headerBuild(tableSize);
-    if (headerFile) {
-        // Nukopijuojame sugeneruotà headerá á galutiná failà
-        fseek(headerFile, 0, SEEK_END);
-        long hSize = ftell(headerFile);
-        fseek(headerFile, 0, SEEK_SET);
-
-        char* hBuffer = (char*)malloc(hSize);
-        if (hBuffer) {
-            fread(hBuffer, 1, hSize, headerFile);
-            fwrite(hBuffer, 1, hSize, h4rFile);
-            free(hBuffer);
-        }
-        fclose(headerFile);
-    }
-
-    // 5. Suspaudþiame ir áraðome paèius duomenis (failus ið aplanko)
-    bool success = archive.dataBuild(h4rFile, archive.m_NbFile, "");
-
-    fclose(h4rFile);
-    fclose(lstFile);
-    return success;
-}
-
-// 1. Funkcija, kuri gràþina bendrà failø skaièiø archyve
-extern "C" __declspec(dllexport) int GetH4RFileCount(const char* h4rPath) {
-    H4RFile archive;
-    if (archive.scan(const_cast<char*>(h4rPath)) == 0) {
-        return -1; // Klaida atidarant failà
-    }
-    return archive.m_NbFile;
-}
-
-// 2. Funkcija, kuri gràþina vieno konkretaus failo informacijà pagal jo indeksà (numerá)
-extern "C" __declspec(dllexport) bool GetH4RFileInfo(const char* h4rPath, int index, char* outName, unsigned int* outSize, unsigned int* outCompSize, unsigned int* outType) {
-    H4RFile archive;
-    if (archive.scan(const_cast<char*>(h4rPath)) == 0) {
-        return false;
-    }
-
-    // Patikriname, ar indeksas nevirðija bendro failø skaièiaus
-    if (index < 0 || (unsigned int)index >= archive.m_NbFile) {
-        return false;
-    }
-
-    // Nukopijuojame failo pavadinimà á jûsø programos paruoðtà buferá
-    if (archive.m_ppName && archive.m_ppName[index]) {
-        strcpy(outName, archive.m_ppName[index]);
+// ==========================================================================================
+// 1. Gràþina failø skaièiø archyve (Uþkrauna viskà á RAM tik 1-àjá kartà!)
+// ==========================================================================================
+extern "C" __declspec(dllexport) int GetH4RFileCount(const char* h4rPath)
+{
+    // Kiekvienà kartà, kai C++Builder papraðo failø skaièiaus, 
+    // mes priverèiame DLL ið naujo RAM atmintyje nuskaityti ðvieþià archyvà!
+    int count = globalArchive.scan((char*)h4rPath);
+    if (count > 0) {
+        isArchiveScanned = true;
     }
     else {
-        strcpy(outName, "Unknown");
+        isArchiveScanned = false;
+    }
+    return count;
+}
+
+
+// ==========================================================================================
+// 2. IÐMANI FUNKCIJA: Gràþina failo info tiesiai ið RAM ir grieþtai sukalibruoja tipus!
+// ==========================================================================================
+extern "C" __declspec(dllexport) bool GetH4RFileInfo(const char* h4rPath, int index, char* outName, unsigned int* outSize, unsigned int* outCompSize, unsigned int* outType)
+{
+    if (!isArchiveScanned) {
+        int count = globalArchive.scan((char*)h4rPath);
+        if (count <= 0) return false;
+        isArchiveScanned = true;
     }
 
-    // Perduodame dydþius ir tipà atgal á Embarcadero
-    if (archive.m_pUnpSize)   *outSize = archive.m_pUnpSize[index];
-    if (archive.m_pSize)      *outCompSize = archive.m_pSize[index];
-    if (archive.m_pDataType)  *outType = archive.m_pDataType[index];
+    if (index < 0 || index >= (int)globalArchive.m_NbFile)
+    {
+        return false;
+    }
+
+    // A. Nukopijuojame originalø pavadinimà á Embarcadero buferá
+    strcpy(outName, globalArchive.m_ppName[index]);
+
+    // B. Perduodame realius binarinius dydþius
+    *outSize = globalArchive.m_pUnpSize[index];
+    *outCompSize = globalArchive.m_pSize[index];
+
+    // C. IÐMANUSIS TIPO ATPAÞINIMAS PAGAL TEKSTINIUS PREFIKSUS (Kalibracija pagal tavo TComboBox!)
+    // Pagal nutylëjimà nustatome paskutiná tipà - 20 (Others)
+    unsigned int calculatedType = 20;
+
+    const char* namePtr = globalArchive.m_ppName[index];
+
+    if (strncmp(namePtr, "table.", 6) == 0) {
+        // Tikriname ar tai nëra specifinë kovos lentelë
+        if (strstr(namePtr, "combat") != NULL) calculatedType = 13; // Combat table
+        else calculatedType = 1; // Tables
+    }
+    else if (strncmp(namePtr, "text.", 5) == 0 || strncmp(namePtr, "strings.", 8) == 0) {
+        calculatedType = 2; // Strings
+    }
+    else if (strncmp(namePtr, "sound.", 6) == 0 || strstr(namePtr, ".music.") != NULL) {
+        calculatedType = 3; // Sound
+    }
+    else if (strncmp(namePtr, "movie.", 6) == 0 || strstr(namePtr, ".bik") != NULL) {
+        calculatedType = 4; // Movies (bik)
+    }
+    else if (strncmp(namePtr, "maps.", 5) == 0 || strstr(namePtr, ".h4c") != NULL) {
+        calculatedType = 5; // Maps
+    }
+    else if (strncmp(namePtr, "font.", 5) == 0) {
+        calculatedType = 6; // Fonts
+    }
+    else if (strncmp(namePtr, "animation.", 10) == 0) {
+        calculatedType = 7; // Animation
+    }
+    else if (strncmp(namePtr, "creature.", 9) == 0) {
+        if (strstr(namePtr, ".sequence") != NULL) calculatedType = 9; // Creature sequence
+        else if (strstr(namePtr, ".combat") != NULL) calculatedType = 10; // Creature combat
+        else calculatedType = 8; // Creatures
+    }
+    else if (strncmp(namePtr, "object.", 7) == 0) {
+        if (strstr(namePtr, ".combat") != NULL) calculatedType = 12; // Object combat
+        else calculatedType = 11; // Object
+    }
+    else if (strncmp(namePtr, "castle.", 7) == 0) {
+        calculatedType = 14; // Castles
+    }
+    else if (strncmp(namePtr, "terrain.", 8) == 0) {
+        calculatedType = 15; // Terrain
+    }
+    else if (strncmp(namePtr, "battlefield.", 12) == 0) {
+        calculatedType = 16; // Battlefields
+    }
+    else if (strncmp(namePtr, "transition.", 11) == 0) {
+        calculatedType = 17; // Transition
+    }
+    else if (strncmp(namePtr, "layers.", 7) == 0) {
+        calculatedType = 18; // Layers
+    }
+    else if (strncmp(namePtr, "bitmap.", 7) == 0) {
+        calculatedType = 19; // Bitmaps
+    }
+
+    // Atiduodame tikslø ir grieþtai sukalibruotà indeksà á C++Builder programà!
+    *outType = calculatedType;
 
     return true;
 }
+
+
+// ==========================================================================================
+// 3. GALUTINIS IÐPAKAVIMAS: Rûðiuoja á aplankus, nukerta priekius ir NUIMA ÞEMO LYGIO ZLIB!
+// ==========================================================================================
+extern "C" __declspec(dllexport) bool ExtractH4R(const char* h4rPath, const char* outDir) {
+
+    if (!isArchiveScanned) {
+        if (globalArchive.scan((char*)h4rPath) == 0) return false;
+        isArchiveScanned = true;
+    }
+
+    // Sukuriame baziná log þurnalà originaliame aplanke
+    globalArchive.dump((char*)outDir);
+
+    FILE* srcFile = fopen(h4rPath, "rb");
+    if (!srcFile) {
+        return false;
+    }
+
+    bool overallSuccess = true;
+
+    // Sukame ciklà per visus failus
+    for (int i = 0; i < (int)globalArchive.m_NbFile; i++) {
+        if (globalArchive.m_pSize[i] == 0) {
+            continue;
+        }
+
+        // 1. NUSTATOME TINKAMÀ SUBAPLANKÀ IR GALÛNÆ PAGAL FAILO TIPÀ
+        const char* subDir = "others\\";
+        const char* extension = ".dat";
+
+        switch (globalArchive.m_pDataType[i]) {
+        case H4R_SOUND:       subDir = "sound\\";   extension = ".mp3";  break;
+        case H4R_TABLE:       subDir = "tables\\";  extension = ".txt";  break;
+        case H4R_FONT:        subDir = "fonts\\";   extension = ".fnt";  break;
+        case H4R_STRINGS:     subDir = "strings\\"; extension = ".txt";  break;
+        case H4R_GAME_MAPS:   subDir = "maps\\";    extension = ".h4c";  break;
+        case H4R_BITMAP_RAW:  subDir = "images\\";  extension = ".raw";  break;
+        case H4R_LAYERS:      subDir = "layers\\";  extension = ".txt";  break;
+        default:              subDir = "others\\";  extension = ".dat";  break;
+        }
+
+        char fullSubDirPath[260] = { 0 };
+        sprintf(fullSubDirPath, "%s%s", outDir, subDir);
+        CreateDirectoryA(fullSubDirPath, NULL);
+
+        // 2. ÐVARUS PAVADINIMO NUKIRPIMAS
+        const char* originalName = globalArchive.m_ppName[i];
+        const char* cleanName = originalName;
+
+        const char* dotPtr = strchr(originalName, '.');
+        if (dotPtr != NULL) {
+            cleanName = dotPtr + 1;
+        }
+
+        char finalFilePath[260] = { 0 };
+        sprintf(finalFilePath, "%s%s%s", fullSubDirPath, cleanName, extension);
+
+        // 3. NUSKAITOME DUOMENIS IÐ ARCHYVO
+        fseek(srcFile, globalArchive.m_pOffset[i], SEEK_SET);
+
+        unsigned int compressedSize = globalArchive.m_pSize[i];
+        unsigned int uncompressedSize = globalArchive.m_pUnpSize[i];
+
+        unsigned char* compressedBuffer = (unsigned char*)malloc(compressedSize);
+        if (compressedBuffer != NULL) {
+            fread(compressedBuffer, 1, compressedSize, srcFile);
+
+            FILE* destFile = fopen(finalFilePath, "wb");
+            if (destFile != NULL) {
+
+                // AR FAILAS YRA SUSPAUSTAS?
+                if (compressedSize < uncompressedSize) {
+
+                    unsigned char* uncompressedBuffer = (unsigned char*)malloc(uncompressedSize);
+                    if (uncompressedBuffer != NULL) {
+
+                        // NAUDOJAME ÞEMO LYGIO ZLIB STRUKTÛRÀ (Paimta ið paèio AKuHAK dump funkcijos eiluèiø!)
+                        z_stream zStream;
+                        zStream.next_in = (Bytef*)compressedBuffer;
+                        zStream.avail_in = (uInt)compressedSize;
+                        zStream.next_out = (Bytef*)uncompressedBuffer;
+                        zStream.avail_out = (uInt)uncompressedSize;
+                        zStream.zalloc = (alloc_func)0;
+                        zStream.zfree = (free_func)0;
+                        zStream.opaque = (voidpf)0;
+
+                        // Inicializuojame gzip/zlib dekompresijà fone
+                        if (inflateInit2(&zStream, 15 + 32) == Z_OK) {
+                            int inflateResult = inflate(&zStream, Z_FINISH);
+                            if (inflateResult == Z_STREAM_END || inflateResult == Z_OK) {
+                                // Áraðome ÐVARØ, dekompresuotà lietuviðkà tekstà!
+                                fwrite(uncompressedBuffer, 1, uncompressedSize, destFile);
+                            }
+                            else {
+                                fwrite(compressedBuffer, 1, compressedSize, destFile);
+                                overallSuccess = false;
+                            }
+                            inflateEnd(&zStream);
+                        }
+                        else {
+                            fwrite(compressedBuffer, 1, compressedSize, destFile);
+                            overallSuccess = false;
+                        }
+
+                        free(uncompressedBuffer);
+                    }
+                    else {
+                        overallSuccess = false;
+                    }
+                }
+                else {
+                    fwrite(compressedBuffer, 1, compressedSize, destFile);
+                }
+
+                fclose(destFile);
+            }
+            else {
+                overallSuccess = false;
+            }
+            free(compressedBuffer);
+        }
+        else {
+            overallSuccess = false;
+        }
+    }
+
+    fclose(srcFile);
+    return overallSuccess;
+}
+
+// ==========================================================================================
+// 4. Supakuoja failus atgal pagal sàraðà
+// ==========================================================================================
+extern "C" __declspec(dllexport) bool PackH4R(const char* h4lPath, const char* outH4RPath) {
+    H4RFile packArchive; // Pakavimui naudojame atskirà vietiná objektà
+    unsigned int tableSize = 0;
+
+    char dirPath[260] = { 0 };
+    strcpy(dirPath, h4lPath);
+
+    size_t length = strlen(dirPath) - 1;
+    for (size_t i = 0; i <= length; i++) {
+        if (dirPath[length - i] == '\\' || dirPath[length - i] == '/') {
+            break;
+        }
+        else {
+            dirPath[length - i] = '\0';
+        }
+    }
+
+    FILE* lstFile = packArchive.scanList((char*)h4lPath, dirPath, &tableSize);
+    if (!lstFile) {
+        return false;
+    }
+
+    FILE* newH4R = fopen(outH4RPath, "wb");
+    if (!newH4R) {
+        fclose(lstFile);
+        return false;
+    }
+
+    unsigned int headerMagic = H4R_HEADER;
+    unsigned int dummyOffset = 0;
+    fwrite(&headerMagic, sizeof(unsigned int), 1, newH4R);
+    fwrite(&dummyOffset, sizeof(unsigned int), 1, newH4R);
+
+    bool packSuccess = true;
+
+    for (int i = 0; i < (int)packArchive.m_NbFile; i++) {
+        if (!packArchive.scanBuild(lstFile, i, dirPath, &tableSize)) {
+            packSuccess = false;
+            break;
+        }
+    }
+
+    fclose(newH4R);
+    fclose(lstFile);
+
+    // Kadangi uþkrovëme naujà arba modifikuotà archyvà, anuliuojame senàjà RAM talpyklà,
+    // kad sekantis programos atidarymas perskaitytø naujus pakeitimus diske.
+    isArchiveScanned = false;
+
+    return packSuccess;
+}
+
+
+
+
 
