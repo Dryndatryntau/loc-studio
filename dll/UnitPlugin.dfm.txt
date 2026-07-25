@@ -1,0 +1,121 @@
+object PluginForm: TPluginForm
+  Left = 0
+  Top = 0
+  Caption = 'Heroes 4 Unpack/Pack'
+  ClientHeight = 600
+  ClientWidth = 900
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object GridFiles: TStringGrid
+    Left = 0
+    Top = 40
+    Width = 900
+    Height = 536
+    Align = alClient
+    ColCount = 5
+    DefaultRowHeight = 20
+    FixedCols = 0
+    FixedRows = 1
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect]
+    TabOrder = 0
+    OnDrawCell = GridFilesDrawCell
+    OnMouseUp = GridFilesMouseUp
+    OnSelectCell = GridFilesSelectCell
+    ColWidths = (
+      70
+      100
+      100
+      130
+      400)
+    RowHeights = (
+      20
+      20
+      20
+      20
+      20)
+  end
+  object TopPanel: TPanel
+    Left = 0
+    Top = 0
+    Width = 900
+    Height = 40
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 1
+    object BtnOpen: TButton
+      Left = 10
+      Top = 8
+      Width = 100
+      Height = 25
+      Caption = 'Atidaryti .h4r'
+      TabOrder = 0
+      OnClick = BtnOpenClick
+    end
+    object EditSearch: TEdit
+      Left = 120
+      Top = 9
+      Width = 200
+      Height = 21
+      TabOrder = 1
+      Text = ''
+      OnChange = EditSearchChange
+    end
+    object BtnExtractSel: TButton
+      Left = 340
+      Top = 8
+      Width = 150
+      Height = 25
+      Caption = 'Išpakuoti pasirinktus'
+      TabOrder = 2
+      OnClick = BtnExtractSelClick
+    end
+    object BtnExtractAll: TButton
+      Left = 500
+      Top = 8
+      Width = 130
+      Height = 25
+      Caption = 'Išpakuoti viską'
+      TabOrder = 3
+      OnClick = BtnExtractAllClick
+    end
+    object BtnPack: TButton
+      Left = 640
+      Top = 8
+      Width = 140
+      Height = 25
+      Caption = 'Supakuoti į /packed'
+      TabOrder = 4
+      OnClick = BtnPackClick
+    end
+  end
+  object ProgressBar1: TProgressBar
+    Left = 0
+    Top = 576
+    Width = 900
+    Height = 24
+    Align = alBottom
+    TabOrder = 2
+    Visible = False
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Heroes IV archives (*.h4r)|*.h4r|Visi failai (*.*)|*.*'
+    Options = [ofHideReadOnly, ofPathMustExist, ofFileMustExist, ofEnableSizing]
+    Left = 800
+    Top = 80
+  end
+  object SaveDialog1: TSaveDialog
+    Filter = 'Heroes IV archives (*.h4r)|*.h4r|Visi failai (*.*)|*.*'
+    Left = 800
+    Top = 128
+  end
+end
