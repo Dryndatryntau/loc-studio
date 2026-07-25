@@ -10,6 +10,7 @@
 #include <Vcl.Grids.hpp>
 #include <System.IOUtils.hpp>
 #include <vector>
+#include <set>
 #include <string>
 #include <IniFiles.hpp>
 
@@ -49,7 +50,7 @@ enum EH4rFileType {
 };
 
 struct TFileEntry {
-    int ID;                 // Unique ID (original file index)
+    int ID;
     String FileName;
     unsigned int Size;
     unsigned int CompSize;
@@ -57,7 +58,7 @@ struct TFileEntry {
 };
 
 // ==========================================================================
-// Core DLL function pointers (mh4_core.dll)
+// Core DLL function pointers
 // ==========================================================================
 typedef int (__cdecl *GetCountFunc)(const char* h4rPath);
 typedef bool (__cdecl *GetInfoFunc)(const char* h4rPath, int index, char* outName,
@@ -68,12 +69,12 @@ typedef bool (__cdecl *ExtractIndicesFunc)(const char* h4rPath, const char* outD
 typedef bool (__cdecl *PackFunc)(const char* h4lPath, const char* outH4RPath);
 
 // ==========================================================================
-// Main plugin form
+// Plugin form class
 // ==========================================================================
 class TPluginForm : public TForm
 {
 __published:
-    // UI components (created at runtime, but declared here for designer)
+    // These components MUST match the .dfm file
     TStringGrid *GridFiles;
     TEdit *EditSearch;
     TButton *BtnOpen;
@@ -85,24 +86,21 @@ __published:
     TSaveDialog *SaveDialog1;
 
 private:
-    // Data
     std::vector<TFileEntry> AllFiles;
-    std::vector<TFileEntry> FilteredFiles;   // currently displayed
+    std::vector<TFileEntry> FilteredFiles;
+    std::set<int> SelectedRows;   // grid row indices (1-based, excluding header)
     String OpenedArchivePath;
     String CurrentLangCode;
 
-    // Sorting state
     int FSortColumn;
     bool FSortAscending;
 
-    // Core DLL
     HINSTANCE hCoreDll;
     GetCountFunc dllGetH4RFileCount;
     GetInfoFunc  dllGetH4RFileInfo;
     ExtractIndicesFunc dllExtractH4RByIndices;
     PackFunc     dllPackH4R;
 
-    // Internal methods
     bool LoadCoreDll();
     void UnloadCoreDll();
     void ReadH4rStructure(const String& ArchivePath);
@@ -110,7 +108,6 @@ private:
     void UpdateGrid();
     void ApplySort();
     void UpdateCaption();
-    void LoadLanguage(const String& langCode);
 
     // Event handlers
     void __fastcall FormCreate(TObject *Sender);
@@ -121,14 +118,18 @@ private:
     void __fastcall BtnPackClick(TObject *Sender);
     void __fastcall EditSearchChange(TObject *Sender);
     void __fastcall GridFilesDrawCell(TObject *Sender, int ACol, int ARow,
-                                      TRect &Rect, TGridDrawState State);
-    void __fastcall GridFilesHeaderClick(TObject *Sender, int ACol);
+                                      const TRect &Rect, TGridDrawState State);
+    void __fastcall GridFilesMouseUp(TObject *Sender, TMouseButton Button,
+                                     TShiftState Shift, int X, int Y);
     void __fastcall GridFilesSelectCell(TObject *Sender, int ACol, int ARow,
                                         bool &CanSelect);
 
 public:
     __fastcall TPluginForm(TComponent* Owner);
     __fastcall ~TPluginForm();
+
+    // Public method for language loading (called from ExecutePlugin)
+    void LoadLanguage(const String& langCode);
 };
 
 // ==========================================================================
