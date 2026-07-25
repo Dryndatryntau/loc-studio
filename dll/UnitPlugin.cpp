@@ -9,6 +9,10 @@
 #include <windows.h>
 
 #pragma package(smart_init)
+#pragma resource "*.dfm"
+
+// Global DLL instance handle (set in DllMain)
+HINSTANCE g_hInst = NULL;
 
 // ==========================================================================
 // Constructor / Destructor
@@ -18,104 +22,21 @@ __fastcall TPluginForm::TPluginForm(TComponent* Owner)
       dllGetH4RFileInfo(NULL), dllExtractH4RByIndices(NULL), dllPackH4R(NULL),
       FSortColumn(-1), FSortAscending(true)
 {
-    Caption = L"Heroes 4 Unpack/Pack";
-    Width = 900;
-    Height = 600;
-    Position = poScreenCenter;
-
-    // ----- Create UI components -----
-    // Top panel
-    TPanel *TopPanel = new TPanel(this);
-    TopPanel->Parent = this;
-    TopPanel->Align = alTop;
-    TopPanel->Height = 40;
-    TopPanel->BevelOuter = bvNone;
-
-    BtnOpen = new TButton(TopPanel);
-    BtnOpen->Parent = TopPanel;
-    BtnOpen->Caption = L"Atidaryti .h4r";
-    BtnOpen->Left = 10;
-    BtnOpen->Top = 8;
-    BtnOpen->Width = 100;
+    // Components are created from .dfm, so we just set up event handlers
+    // that are not set in the designer (because we use code).
+    // However, we already set them in the .dfm via Object Inspector.
+    // For safety, we assign them here as well:
     BtnOpen->OnClick = BtnOpenClick;
-
-    EditSearch = new TEdit(TopPanel);
-    EditSearch->Parent = TopPanel;
-    EditSearch->Left = 120;
-    EditSearch->Top = 9;
-    EditSearch->Width = 200;
-    EditSearch->Text = L"";
-    EditSearch->OnChange = EditSearchChange;
-
-    BtnExtractSel = new TButton(TopPanel);
-    BtnExtractSel->Parent = TopPanel;
-    BtnExtractSel->Caption = L"Išpakuoti pasirinktus";
-    BtnExtractSel->Left = 340;
-    BtnExtractSel->Top = 8;
-    BtnExtractSel->Width = 150;
     BtnExtractSel->OnClick = BtnExtractSelClick;
-
-    BtnExtractAll = new TButton(TopPanel);
-    BtnExtractAll->Parent = TopPanel;
-    BtnExtractAll->Caption = L"Išpakuoti viską";
-    BtnExtractAll->Left = 500;
-    BtnExtractAll->Top = 8;
-    BtnExtractAll->Width = 130;
     BtnExtractAll->OnClick = BtnExtractAllClick;
-
-    BtnPack = new TButton(TopPanel);
-    BtnPack->Parent = TopPanel;
-    BtnPack->Caption = L"Supakuoti į /packed";
-    BtnPack->Left = 640;
-    BtnPack->Top = 8;
-    BtnPack->Width = 140;
     BtnPack->OnClick = BtnPackClick;
-
-    // Grid
-    GridFiles = new TStringGrid(this);
-    GridFiles->Parent = this;
-    GridFiles->Align = alClient;
-    GridFiles->FixedCols = 0;
-    GridFiles->FixedRows = 1;
-    GridFiles->Options = GridFiles->Options << goRowSelect << goMultiSelect;
-    GridFiles->DefaultRowHeight = 20;
+    EditSearch->OnChange = EditSearchChange;
     GridFiles->OnDrawCell = GridFilesDrawCell;
-    GridFiles->OnHeaderClick = GridFilesHeaderClick;
+    GridFiles->OnMouseUp = GridFilesMouseUp;
     GridFiles->OnSelectCell = GridFilesSelectCell;
-
-    GridFiles->ColCount = 5;
-    GridFiles->ColWidths[0] = 70;   // ID
-    GridFiles->ColWidths[1] = 100;  // Size
-    GridFiles->ColWidths[2] = 100;  // Compressed
-    GridFiles->ColWidths[3] = 130;  // Type
-    GridFiles->ColWidths[4] = 400;  // Filename
-
-    // Set default headers (will be replaced by localization)
-    GridFiles->Cells[0][0] = L"ID";
-    GridFiles->Cells[1][0] = L"Size";
-    GridFiles->Cells[2][0] = L"Compressed";
-    GridFiles->Cells[3][0] = L"Type";
-    GridFiles->Cells[4][0] = L"Filename";
-
-    // Progress bar
-    ProgressBar1 = new TProgressBar(this);
-    ProgressBar1->Parent = this;
-    ProgressBar1->Align = alBottom;
-    ProgressBar1->Height = 24;
-    ProgressBar1->Visible = false;
-
-    // Dialogs
-    OpenDialog1 = new TOpenDialog(this);
-    OpenDialog1->Filter = L"Heroes IV archives (*.h4r)|*.h4r|Visi failai (*.*)|*.*";
-    OpenDialog1->InitialDir = ExtractFilePath(ParamStr(0));
-
-    SaveDialog1 = new TSaveDialog(this);
-    SaveDialog1->Filter = L"Heroes IV archives (*.h4r)|*.h4r|Visi failai (*.*)|*.*";
 
     // Load core DLL
     LoadCoreDll();
-
-    // Language will be set via ExecutePlugin
 }
 
 //---------------------------------------------------------------------------
@@ -129,8 +50,9 @@ __fastcall TPluginForm::~TPluginForm()
 // ==========================================================================
 bool TPluginForm::LoadCoreDll()
 {
+    // Get the path of this DLL using the global instance handle
     wchar_t szPath[MAX_PATH];
-    GetModuleFileNameW((HMODULE)(HINSTANCE)this->ModuleHandle, szPath, MAX_PATH);
+    GetModuleFileNameW(g_hInst, szPath, MAX_PATH);
     String pluginDir = ExtractFilePath(String(szPath));
     String corePath = pluginDir + L"core\\mh4_core.dll";
 
@@ -173,27 +95,22 @@ void TPluginForm::LoadLanguage(const String& langCode)
     String langDir = ExtractFilePath(Application->ExeName) + L"lang\\";
     String langFile = langDir + langCode + L".ini";
     if (!FileExists(langFile)) {
-        // Fallback to english
         langFile = langDir + L"english.ini";
         if (!FileExists(langFile)) return;
     }
 
     TIniFile *ini = new TIniFile(langFile);
 
-    // Update grid headers
     GridFiles->Cells[0][0] = ini->ReadString(L"h4unpack_pack", L"Col_ID", L"ID");
     GridFiles->Cells[1][0] = ini->ReadString(L"h4unpack_pack", L"Col_Size", L"Size");
     GridFiles->Cells[2][0] = ini->ReadString(L"h4unpack_pack", L"Col_Compressed", L"Compressed");
     GridFiles->Cells[3][0] = ini->ReadString(L"h4unpack_pack", L"Col_Type", L"Type");
     GridFiles->Cells[4][0] = ini->ReadString(L"h4unpack_pack", L"Col_Filename", L"Filename");
 
-    // Buttons
     BtnOpen->Caption = ini->ReadString(L"h4unpack_pack", L"Btn_Open", L"Open .h4r");
     BtnExtractSel->Caption = ini->ReadString(L"h4unpack_pack", L"Btn_ExtractSelected", L"Extract selected");
     BtnExtractAll->Caption = ini->ReadString(L"h4unpack_pack", L"Btn_ExtractAll", L"Extract all");
     BtnPack->Caption = ini->ReadString(L"h4unpack_pack", L"Btn_Pack", L"Pack to /packed");
-
-    // Form caption
     Caption = ini->ReadString(L"h4unpack_pack", L"Form_Caption", L"Heroes 4 Unpack/Pack");
 
     delete ini;
@@ -280,6 +197,7 @@ void TPluginForm::ApplyFilter(const String& searchText)
 void TPluginForm::UpdateGrid()
 {
     GridFiles->RowCount = FilteredFiles.size() + 1;
+    SelectedRows.clear();
     GridFiles->Invalidate();
 }
 
@@ -308,13 +226,13 @@ void TPluginForm::ApplySort()
 }
 
 // ==========================================================================
-// Grid drawing
+// Grid drawing with custom selection
 // ==========================================================================
 void __fastcall TPluginForm::GridFilesDrawCell(TObject *Sender, int ACol, int ARow,
-                                               TRect &Rect, TGridDrawState State)
+                                               const TRect &Rect, TGridDrawState State)
 {
     if (ARow == 0) {
-        // Header – drawn automatically
+        // Header – drawn automatically, but we may customize if needed
         return;
     }
 
@@ -323,12 +241,23 @@ void __fastcall TPluginForm::GridFilesDrawCell(TObject *Sender, int ACol, int AR
         return;
 
     const TFileEntry& entry = FilteredFiles[idx];
+    bool isSelected = (SelectedRows.find(ARow) != SelectedRows.end());
+
+    if (isSelected) {
+        GridFiles->Canvas->Brush->Color = clHighlight;
+        GridFiles->Canvas->Font->Color = clHighlightText;
+    } else {
+        GridFiles->Canvas->Brush->Color = clWindow;
+        GridFiles->Canvas->Font->Color = clWindowText;
+    }
+
+    GridFiles->Canvas->FillRect(Rect);
 
     String text;
     switch (ACol) {
-        case 0: text = IntToStr(entry.ID); break;
-        case 1: text = IntToStr((int)entry.Size); break;
-        case 2: text = IntToStr((int)entry.CompSize); break;
+        case 0: text = System::IntToStr(entry.ID); break;
+        case 1: text = System::IntToStr((int)entry.Size); break;
+        case 2: text = System::IntToStr((int)entry.CompSize); break;
         case 3: {
             switch (entry.Type) {
                 case H4R_ACTOR_SEQUENCE: text = "Sprite animation"; break;
@@ -353,8 +282,45 @@ void __fastcall TPluginForm::GridFilesDrawCell(TObject *Sender, int ACol, int AR
         default: text = "";
     }
 
-    GridFiles->Canvas->FillRect(Rect);
     GridFiles->Canvas->TextOut(Rect.Left + 2, Rect.Top + 2, text);
+}
+
+// ==========================================================================
+// Custom multi-select via mouse (no goMultiSelect)
+// ==========================================================================
+void __fastcall TPluginForm::GridFilesMouseUp(TObject *Sender, TMouseButton Button,
+                                              TShiftState Shift, int X, int Y)
+{
+    if (Button != mbLeft) return;
+
+    int row, col;
+    GridFiles->MouseToCell(X, Y, col, row);
+    if (row <= 0) {
+        // Header clicked – sorting
+        if (col >= 0 && col < GridFiles->ColCount) {
+            if (FSortColumn == col)
+                FSortAscending = !FSortAscending;
+            else {
+                FSortColumn = col;
+                FSortAscending = true;
+            }
+            ApplySort();
+        }
+        return;
+    }
+
+    // Toggle selection with Ctrl, otherwise single select
+    if (Shift.Contains(ssCtrl)) {
+        if (SelectedRows.find(row) != SelectedRows.end())
+            SelectedRows.erase(row);
+        else
+            SelectedRows.insert(row);
+    } else {
+        SelectedRows.clear();
+        SelectedRows.insert(row);
+    }
+
+    GridFiles->Invalidate(); // redraw to show selection
 }
 
 // ==========================================================================
@@ -375,19 +341,22 @@ void __fastcall TPluginForm::BtnExtractSelClick(TObject *Sender)
         return;
     }
 
-    // Collect selected rows
+    if (SelectedRows.empty()) {
+        ShowMessage(L"No files selected.");
+        return;
+    }
+
+    // Collect IDs from selected rows
     std::vector<int> selectedIDs;
-    for (int row = 1; row < GridFiles->RowCount; row++) {
-        if (GridFiles->IsSelectedRow(row)) {
-            int idx = row - 1;
-            if (idx >= 0 && idx < (int)FilteredFiles.size()) {
-                selectedIDs.push_back(FilteredFiles[idx].ID);
-            }
+    for (int row : SelectedRows) {
+        int idx = row - 1;
+        if (idx >= 0 && idx < (int)FilteredFiles.size()) {
+            selectedIDs.push_back(FilteredFiles[idx].ID);
         }
     }
 
     if (selectedIDs.empty()) {
-        ShowMessage(L"No files selected.");
+        ShowMessage(L"No valid files selected.");
         return;
     }
 
@@ -418,7 +387,7 @@ void __fastcall TPluginForm::BtnExtractSelClick(TObject *Sender)
     this->Cursor = crDefault;
 
     if (success)
-        ShowMessage(L"Extracted " + IntToStr(selectedIDs.size()) + L" files to " + outDir);
+        ShowMessage(L"Extracted " + System::IntToStr(selectedIDs.size()) + L" files to " + outDir);
     else
         ShowMessage(L"Extraction failed.");
 }
@@ -467,7 +436,7 @@ void __fastcall TPluginForm::BtnExtractAllClick(TObject *Sender)
     this->Cursor = crDefault;
 
     if (success)
-        ShowMessage(L"Extracted all " + IntToStr(allIDs.size()) + L" files to " + outDir);
+        ShowMessage(L"Extracted all " + System::IntToStr(allIDs.size()) + L" files to " + outDir);
     else
         ShowMessage(L"Extraction failed.");
 }
@@ -481,7 +450,7 @@ void __fastcall TPluginForm::BtnPackClick(TObject *Sender)
         return;
     }
 
-    // Build .lst file (simplified – same as original)
+    // Build .lst file
     String lstPath = baseDir + L"pack.lst";
     TStringList *lst = new TStringList();
     lst->Add(L"[H4R File List]");
@@ -523,7 +492,7 @@ void __fastcall TPluginForm::BtnPackClick(TObject *Sender)
         return;
     }
 
-    lst->Add(IntToStr((int)packFiles.size()));
+    lst->Add(System::IntToStr((int)packFiles.size()));
     for (const auto& pf : packFiles)
         lst->Add(pf.relPath);
 
@@ -568,21 +537,10 @@ void __fastcall TPluginForm::EditSearchChange(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
-void __fastcall TPluginForm::GridFilesHeaderClick(TObject *Sender, int ACol)
-{
-    if (FSortColumn == ACol)
-        FSortAscending = !FSortAscending;
-    else {
-        FSortColumn = ACol;
-        FSortAscending = true;
-    }
-    ApplySort();
-}
-
-//---------------------------------------------------------------------------
 void __fastcall TPluginForm::GridFilesSelectCell(TObject *Sender, int ACol, int ARow,
                                                   bool &CanSelect)
 {
+    // This event is used to prevent selection if needed; we allow all.
     CanSelect = true;
 }
 
@@ -592,8 +550,8 @@ void TPluginForm::UpdateCaption()
     if (!OpenedArchivePath.IsEmpty()) {
         String name = ExtractFileName(OpenedArchivePath);
         Caption = L"Heroes 4 Unpack/Pack - [" + name + L"] (Showing: " +
-                  IntToStr(FilteredFiles.size()) + L" of " +
-                  IntToStr(AllFiles.size()) + L")";
+                  System::IntToStr((int)FilteredFiles.size()) + L" of " +
+                  System::IntToStr((int)AllFiles.size()) + L")";
     } else {
         Caption = L"Heroes 4 Unpack/Pack";
     }
@@ -620,29 +578,28 @@ extern "C" __declspec(dllexport) void __stdcall GetPluginInfo(TPluginInfo* Info)
 extern "C" __declspec(dllexport) void __stdcall ExecutePlugin(HWND parentHWND, const char* langCode)
 {
     try {
-        // Create form
         TPluginForm *form = new TPluginForm(Application);
-        // Set parent window for synchronization (minimize/maximize)
         if (parentHWND) {
             SetWindowLongPtr(form->Handle, GWLP_HWNDPARENT, (LONG_PTR)parentHWND);
         }
-        // Load language
         if (langCode) {
             form->LoadLanguage(String(langCode));
         }
-        // Show modal
         form->ShowModal();
         delete form;
     } catch (Exception &e) {
-        MessageBoxA(parentHWND, e.Message.c_str(), "Plugin Error", MB_OK | MB_ICONERROR);
+        // Use MessageBoxW to handle Unicode
+        MessageBoxW(parentHWND, e.Message.c_str(), L"Plugin Error", MB_OK | MB_ICONERROR);
     }
 }
 
 // ==========================================================================
-// DLL entry point
+// DLL Entry Point
 // ==========================================================================
 int WINAPI DllMain(HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
 {
+    if (fdwReason == DLL_PROCESS_ATTACH)
+        g_hInst = hinstDLL;
     return 1;
 }
 //---------------------------------------------------------------------------
