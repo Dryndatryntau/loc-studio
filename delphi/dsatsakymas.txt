@@ -1,0 +1,475 @@
+library h4rpakunpak;
+
+uses
+  Winapi.Windows,
+  System.SysUtils,
+  System.Classes,
+  System.ZLib;   // Delphi’s built‑in ZLib, supports raw deflate with -15
+
+{$R *.res}
+
+// ===========================================================================
+//  Structure definitions (match the exact game format)
+// ===========================================================================
+type
+  // Plugin info for the host application
+  TPluginInfo = record
+    PluginName: PWideChar;
+    Version: PWideChar;
+  end;
+  PPluginInfo = ^TPluginInfo;
+
+  // 18‑byte file entry as stored in the H4R table
+  {$A1}
+  TFileEntry = packed record
+    Offset: Cardinal;       // 4
+    CompSize: Cardinal;     // 4
+    UncompSize: Cardinal;   // 4
+    FileTime: Cardinal;     // 4
+    NameLen: Word;          // 2
+  end;
+
+  // In‑memory representation of one file entry
+  TMemoryMapEntry = record
+    Offset: Cardinal;
+    CompSize: Cardinal;
+    UncompSize: Cardinal;
+    CompType: Cardinal;
+    FileType: Cardinal;
+    FileName: AnsiString;   // stored as ANSI (single‑byte) as in the original
+  end;
+
+const
+  g_PluginInfo: TPluginInfo = (
+    PluginName: 'HoMM4 Universal Archiver (GitHub + Headers Edition)';
+    Version: '1.1'
+  );
+
+// ===========================================================================
+//  ExtractH4R – two‑stage safe unpacking
+// ===========================================================================
+function ExtractH4R(const H4RPath: string): Integer;
+var
+  FS: TFileStream;
+  MS, UncompStream: TMemoryStream;
+  Decompressor: TZDecompressionStream;
+  HeaderMagic, TableOffset, NbFile, I: Cardinal;
+  Entry: TFileEntry;
+  PathLen, PtrLen, UnkLen: Word;
+  CompType, FileType: Cardinal;
+  SoundType: Byte;
+  IsTextFile: Boolean;
+  TargetFolder, FinalExt, FullPath: string;
+  BaseFolder: string;
+  AtmintiesZemelapis: TArray<TMemoryMapEntry>;
+  SvarusVardas, Uodega: string;
+begin
+  Result := 0;
+  if not FileExists(H4RPath) then Exit;
+
+  BaseFolder := ExtractFilePath(ParamStr(0)) + 'unpacked\';
+  ForceDirectories(BaseFolder);
+  ForceDirectories(BaseFolder + 'table');
+  ForceDirectories(BaseFolder + 'strings');
+  ForceDirectories(BaseFolder + 'fonts');
+  ForceDirectories(BaseFolder + 'sounds');
+  ForceDirectories(BaseFolder + 'layers');
+  ForceDirectories(BaseFolder + 'unknown');
+
+  FS := TFileStream.Create(H4RPath, fmOpenRead or fmShareDenyNone);
+  try
+    // Read global header
+    FS.ReadBuffer(HeaderMagic, 4);
+    FS.ReadBuffer(TableOffset, 4);
+
+    // Move to the file table
+    FS.Position := TableOffset;
+    FS.ReadBuffer(NbFile, 4);
+
+    if NbFile = 0 then Exit;
+    SetLength(AtmintiesZemelapis, NbFile);
+
+    // ---- STAGE 1: read the entire table into memory ----
+    for I := 0 to NbFile - 1 do
+    begin
+      // Read the fixed 18‑byte entry
+      FS.ReadBuffer(Entry, SizeOf(Entry));
+
+      AtmintiesZemelapis[I].Offset := Entry.Offset;
+      AtmintiesZemelapis[I].CompSize := Entry.CompSize;
+      AtmintiesZemelapis[I].UncompSize := Entry.UncompSize;
+
+      // Read the ANSI filename
+      if Entry.NameLen > 0 then
+      begin
+        SetLength(AtmintiesZemelapis[I].FileName, Entry.NameLen);
+        FS.ReadBuffer(Pointer(AtmintiesZemelapis[I].FileName)^, Entry.NameLen);
+        AtmintiesZemelapis[I].FileName := Trim(AtmintiesZemelapis[I].FileName);
+      end
+      else
+      begin
+        AtmintiesZemelapis[I].FileName := AnsiString('file_') + AnsiString(IntToStr(I));
+      end;
+
+      // Read and skip the three variable‑length fields
+      FS.ReadBuffer(PathLen, 2);
+      if PathLen > 0 then FS.Position := FS.Position + PathLen;
+
+      FS.ReadBuffer(PtrLen, 2);
+      if PtrLen > 0 then FS.Position := FS.Position + PtrLen;
+
+      FS.ReadBuffer(UnkLen, 2);
+      if UnkLen > 0 then FS.Position := FS.Position + UnkLen;
+
+      // Read compression and file type
+      FS.ReadBuffer(CompType, 4);
+      FS.ReadBuffer(FileType, 4);
+
+      AtmintiesZemelapis[I].CompType := CompType;
+      AtmintiesZemelapis[I].FileType := FileType;
+    end;
+
+    // ---- STAGE 2: physically extract each file ----
+    for I := 0 to NbFile - 1 do
+    begin
+      if AtmintiesZemelapis[I].FileName = '' then Continue;
+
+      // Determine target folder and extension
+      SvarusVardas := string(AtmintiesZemelapis[I].FileName);
+      IsTextFile := (AtmintiesZemelapis[I].FileType = 15) or
+                    (Pos('table.', LowerCase(SvarusVardas)) > 0);
+
+      TargetFolder := BaseFolder + 'unknown\';
+      FinalExt := '';
+
+      if IsTextFile then
+      begin
+        if Pos('table.', LowerCase(SvarusVardas)) = 1 then
+          TargetFolder := BaseFolder + 'table\'
+        else
+          TargetFolder := BaseFolder + 'strings\';
+        FinalExt := '.txt';
+      end
+      else
+      begin
+        case AtmintiesZemelapis[I].FileType of
+          11: begin TargetFolder := BaseFolder + 'fonts\'; FinalExt := '.fnt'; end;
+          14: TargetFolder := BaseFolder + 'sounds\';
+          12: begin TargetFolder := BaseFolder + 'layers\'; FinalExt := '.h4c'; end;
+        end;
+      end;
+
+      // Position the main stream at the file data
+      FS.Position := AtmintiesZemelapis[I].Offset;
+
+      MS := TMemoryStream.Create;
+      UncompStream := TMemoryStream.Create;
+      try
+        // Read compressed data (if any)
+        if AtmintiesZemelapis[I].CompSize > 0 then
+        begin
+          MS.Size := AtmintiesZemelapis[I].CompSize;
+          FS.ReadBuffer(MS.Memory^, AtmintiesZemelapis[I].CompSize);
+          MS.Position := 0;   // <-- CRITICAL: reset to beginning before decompression
+        end;
+
+        // Decompress if compressed or a text file
+        try
+          if (AtmintiesZemelapis[I].CompType = 3) or IsTextFile then
+          begin
+            Decompressor := TZDecompressionStream.Create(MS, -15);
+            try
+              UncompStream.CopyFrom(Decompressor, AtmintiesZemelapis[I].UncompSize);
+            finally
+              Decompressor.Free;
+            end;
+          end
+          else
+            UncompStream.CopyFrom(MS, AtmintiesZemelapis[I].CompSize);
+        except
+          // Fallback: if decompression fails, copy raw data
+          MS.Position := 0;
+          UncompStream.Size := 0;
+          UncompStream.CopyFrom(MS, AtmintiesZemelapis[I].CompSize);
+        end;
+
+        UncompStream.Position := 0;
+
+        if UncompStream.Size > 0 then
+        begin
+          // Handle sound file headers
+          if AtmintiesZemelapis[I].FileType = 14 then
+          begin
+            UncompStream.ReadBuffer(SoundType, 1);
+            UncompStream.Position := 0;
+            if SoundType = $01 then
+            begin
+              FinalExt := '.mp3';
+              if UncompStream.Size > 19 then UncompStream.Position := 19;
+            end
+            else
+            begin
+              FinalExt := '.wav';
+              if UncompStream.Size > 15 then UncompStream.Position := 15;
+            end;
+          end
+          // Handle map/layer headers
+          else if AtmintiesZemelapis[I].FileType = 12 then
+          begin
+            if UncompStream.Size > 16 then UncompStream.Position := 16;
+          end;
+
+          // Build output path
+          Uodega := string(AtmintiesZemelapis[I].FileName);
+          if ExtractFileExt(Uodega) = '' then
+            Uodega := Uodega + FinalExt;
+
+          FullPath := TargetFolder + Uodega;
+
+          // Write the extracted data (with header stripped)
+          with TFileStream.Create(FullPath, fmCreate or fmShareDenyNone) do
+          try
+            CopyFrom(UncompStream, UncompStream.Size - UncompStream.Position);
+            Inc(Result);
+          finally
+            Free;
+          end;
+        end;
+      finally
+        UncompStream.Free;
+        MS.Free;
+      end;
+    end;
+  finally
+    FS.Free;
+  end;
+end;
+
+// ===========================================================================
+//  PackH4R – scan folders and create a new H4R archive
+// ===========================================================================
+function PackH4R(const TargetH4RPath: string): Integer;
+var
+  FOut, FIn: TFileStream;
+  MS, CompStream: TMemoryStream;
+  Compressor: TZCompressionStream;
+  HeaderMagic, TableOffset, NbFile: Cardinal;
+  I: Integer;
+  SR: TSearchRec;
+  Aplankai: array[0..5] of string;
+  AtmintiesZemelapis: TArray<TMemoryMapEntry>;
+  EntryCount: Integer;
+  PathLen, PtrLen, UnkLen: Word;
+  TempDydis: Cardinal;
+  IsTextFile: Boolean;
+  SvarusVardas: string;
+
+  // Headers for sound and map files
+  SoundHeader: array[0..18] of Byte;
+  MapHeader: array[0..15] of Byte;
+begin
+  Result := 0;
+  HeaderMagic := $05523448;   // "H4R" + 0x05 0x08 0x00 0x00 0x00
+  EntryCount := 0;
+
+  // Folders to scan (relative to the executable)
+  Aplankai[0] := ExtractFilePath(ParamStr(0)) + 'unpacked\table\';
+  Aplankai[1] := ExtractFilePath(ParamStr(0)) + 'unpacked\strings\';
+  Aplankai[2] := ExtractFilePath(ParamStr(0)) + 'unpacked\fonts\';
+  Aplankai[3] := ExtractFilePath(ParamStr(0)) + 'unpacked\sounds\';
+  Aplankai[4] := ExtractFilePath(ParamStr(0)) + 'unpacked\layers\';
+  Aplankai[5] := ExtractFilePath(ParamStr(0)) + 'unpacked\unknown\';
+
+  FOut := TFileStream.Create(TargetH4RPath, fmCreate or fmShareDenyNone);
+  try
+    // Reserve space for the global header (will be filled later)
+    TableOffset := 0;
+    FOut.WriteBuffer(HeaderMagic, 4);
+    FOut.WriteBuffer(TableOffset, 4);
+
+    // Scan each folder and pack files
+    for I := 0 to 5 do
+    begin
+      if not DirectoryExists(Aplankai[I]) then Continue;
+
+      if FindFirst(Aplankai[I] + '*.*', faAnyFile, SR) = 0 then
+      try
+        repeat
+          if (SR.Name <> '.') and (SR.Name <> '..') then
+          begin
+            // Add a new entry to the memory map
+            SetLength(AtmintiesZemelapis, EntryCount + 1);
+            AtmintiesZemelapis[EntryCount].FileName := AnsiString(SR.Name);
+            AtmintiesZemelapis[EntryCount].Offset := FOut.Position;
+
+            // Determine file type based on source folder
+            AtmintiesZemelapis[EntryCount].FileType := 99; // unknown
+            if I = 0 then AtmintiesZemelapis[EntryCount].FileType := 15; // table
+            if I = 1 then AtmintiesZemelapis[EntryCount].FileType := 15; // strings
+            if I = 2 then AtmintiesZemelapis[EntryCount].FileType := 11; // fonts
+            if I = 3 then AtmintiesZemelapis[EntryCount].FileType := 14; // sounds
+            if I = 4 then AtmintiesZemelapis[EntryCount].FileType := 12; // layers
+
+            MS := TMemoryStream.Create;
+            try
+              // Read the source file
+              FIn := TFileStream.Create(Aplankai[I] + SR.Name, fmOpenRead or fmShareDenyNone);
+              try
+                // Add appropriate header for sounds and maps
+                if AtmintiesZemelapis[EntryCount].FileType = 14 then
+                begin
+                  FillChar(SoundHeader, SizeOf(SoundHeader), 0);
+                  TempDydis := FIn.Size;
+                  if ExtractFileExt(SR.Name) = '.mp3' then
+                  begin
+                    SoundHeader[0] := $01; SoundHeader[3] := $10; SoundHeader[4] := $02;
+                    SoundHeader[5] := $44; SoundHeader[6] := $AC;
+                    Move(TempDydis, SoundHeader[15], 4);
+                    MS.WriteBuffer(SoundHeader, 19);
+                  end
+                  else
+                  begin
+                    SoundHeader[0] := $00; SoundHeader[3] := $10; SoundHeader[4] := $01;
+                    SoundHeader[5] := $22; SoundHeader[6] := $56;
+                    Move(TempDydis, SoundHeader[11], 4);
+                    MS.WriteBuffer(SoundHeader, 15);
+                  end;
+                end
+                else if AtmintiesZemelapis[EntryCount].FileType = 12 then
+                begin
+                  FillChar(MapHeader, SizeOf(MapHeader), 0);
+                  MapHeader[0] := $01; MapHeader[4] := $01; MapHeader[8] := $10; MapHeader[9] := $27;
+                  TempDydis := FIn.Size;
+                  Move(TempDydis, MapHeader[12], 4);
+                  MS.WriteBuffer(MapHeader, 16);
+                end;
+
+                // Append the actual file data (after the header)
+                MS.CopyFrom(FIn, 0);
+              finally
+                FIn.Free;
+              end;
+
+              AtmintiesZemelapis[EntryCount].UncompSize := MS.Size;
+
+              // Compress the data (always use raw deflate, compType = 3)
+              CompStream := TMemoryStream.Create;
+              try
+                SvarusVardas := string(AtmintiesZemelapis[EntryCount].FileName);
+                IsTextFile := (AtmintiesZemelapis[EntryCount].FileType = 15) or
+                              (Pos('table.', LowerCase(SvarusVardas)) > 0);
+
+                MS.Position := 0;
+                Compressor := TZCompressionStream.Create(clDefault, CompStream);
+                try
+                  Compressor.CopyFrom(MS, 0);
+                finally
+                  Compressor.Free;
+                end;
+
+                CompStream.Position := 0;
+                FOut.CopyFrom(CompStream, 0);
+
+                AtmintiesZemelapis[EntryCount].CompSize := CompStream.Size;
+                AtmintiesZemelapis[EntryCount].CompType := 3;   // compressed
+              finally
+                CompStream.Free;
+              end;
+            finally
+              MS.Free;
+            end;
+
+            Inc(EntryCount);
+          end;
+        until FindNext(SR) <> 0;
+      finally
+        FindClose(SR);
+      end;
+    end;
+
+    // ---- Write the file table ----
+    TableOffset := FOut.Position;
+    NbFile := EntryCount;
+    FOut.WriteBuffer(NbFile, 4);
+
+    PathLen := 0; PtrLen := 0; UnkLen := 0;
+
+    for I := 0 to EntryCount - 1 do
+    begin
+      FOut.WriteBuffer(AtmintiesZemelapis[I].Offset, 4);
+      FOut.WriteBuffer(AtmintiesZemelapis[I].CompSize, 4);
+      FOut.WriteBuffer(AtmintiesZemelapis[I].UncompSize, 4);
+
+      TempDydis := $3E3A1DE3;   // fixed FileTime (as in original)
+      FOut.WriteBuffer(TempDydis, 4);
+
+      TempDydis := Length(AtmintiesZemelapis[I].FileName);
+      FOut.WriteBuffer(TempDydis, 2);
+      FOut.WriteBuffer(Pointer(AtmintiesZemelapis[I].FileName)^, Length(AtmintiesZemelapis[I].FileName));
+
+      FOut.WriteBuffer(PathLen, 2);
+      FOut.WriteBuffer(PtrLen, 2);
+      FOut.WriteBuffer(UnkLen, 2);
+
+      FOut.WriteBuffer(AtmintiesZemelapis[I].CompType, 4);
+      FOut.WriteBuffer(AtmintiesZemelapis[I].FileType, 4);
+    end;
+
+    // Update the global header with the correct table offset
+    FOut.Position := 4;
+    FOut.WriteBuffer(TableOffset, 4);
+
+    Result := EntryCount;
+  finally
+    FOut.Free;
+  end;
+end;
+
+// ===========================================================================
+//  Plugin exports
+// ===========================================================================
+function GetPluginInfo(LangCode: PWideChar): PPluginInfo; stdcall;
+begin
+  Result := @g_PluginInfo;
+end;
+
+procedure ExecutePlugin(ParentHWND: HWND; LangFilePath: PWideChar); stdcall;
+var
+  Pasirinkimas: Integer;
+  Rezultatas: Integer;
+begin
+  Pasirinkimas := MessageBoxW(
+    ParentHWND,
+    'Pasirinkite veiksmą su Heroes IV archyvu:' + #13#10#13#10 +
+    '[YES] - Išpakuoti (Unpack text.h4r)' + #13#10 +
+    '[NO] - Supakuoti aplanką atgal (Pack)',
+    'Heroes IV Studija',
+    MB_YESNOCANCEL or MB_ICONQUESTION
+  );
+
+  if Pasirinkimas = IDYES then
+  begin
+    MessageBoxW(ParentHWND, 'Pradedamas saugus dviejų etapų išpakavimas...', 'Informacija', MB_OK or MB_ICONINFORMATION);
+    Rezultatas := ExtractH4R('text.h4r');
+    if Rezultatas > 0 then
+      MessageBoxW(ParentHWND, PChar('Išpakavimas baigtas!' + #13#10 + 'Išsaugota failų: ' + IntToStr(Rezultatas)), 'Sėkmė', MB_OK or MB_ICONINFORMATION)
+    else
+      MessageBoxW(ParentHWND, 'Klaida: Nepavyko rasti arba perskaityti text.h4r failo!', 'Klaida', MB_OK or MB_ICONERROR);
+  end
+  else if Pasirinkimas = IDNO then
+  begin
+    MessageBoxW(ParentHWND, 'Pradedamas atvirkštinis supakavimas...', 'Informacija', MB_OK or MB_ICONINFORMATION);
+    Rezultatas := PackH4R('new_text.h4r');
+    if Rezultatas > 0 then
+      MessageBoxW(ParentHWND, PChar('Supakavimas baigtas sėkmingai!' + #13#10 + 'Sukurta failų naujame archyve: ' + IntToStr(Rezultatas) + #13#10#13#10 + 'Failas išsaugotas kaip: new_text.h4r'), 'Sėkmė', MB_OK or MB_ICONINFORMATION)
+    else
+      MessageBoxW(ParentHWND, 'Klaida: Nepavyko sukurti archyvo. Įsitikinkite, kad aplankas „unpacked“ egzistuoja!', 'Klaida', MB_OK or MB_ICONERROR);
+  end;
+end;
+
+exports
+  GetPluginInfo,
+  ExecutePlugin;
+
+begin
+end.
